@@ -25,7 +25,7 @@ import org.matsim.api.core.v01.population.PopulationFactory;
 import org.matsim.api.core.v01.population.Route;
 import org.matsim.core.config.Config;
 import org.matsim.core.config.ConfigUtils;
-import org.matsim.core.population.routes.LinkNetworkRouteImpl;
+import org.matsim.core.population.routes.LinkNetworkRouteFactory;
 import org.matsim.core.population.routes.NetworkRoute;
 import org.matsim.core.scenario.ScenarioUtils;
 import org.matsim.core.utils.misc.Time;
@@ -64,6 +64,8 @@ class TestFixture {
 
     TransitLine line1;
     TransitRoute route1;
+    
+    LinkNetworkRouteFactory linkNetworkRouteFactory;
 
     TestFixture() {
         this.config = ConfigUtils.createConfig();
@@ -72,6 +74,7 @@ class TestFixture {
         this.sbbConfig = ConfigUtils.addOrGetModule(this.config, SBBTransitConfigGroup.class);
         this.sbbConfig.setDeterministicServiceModes(Collections.singleton("train"));
         this.scenario = ScenarioUtils.createScenario(this.config);
+        this.linkNetworkRouteFactory = new LinkNetworkRouteFactory();
 
         Network network = this.scenario.getNetwork();
         NetworkFactory nf = network.getFactory();
@@ -138,7 +141,8 @@ class TestFixture {
         List<Id<Link>> linkIdList = new ArrayList<>();
         linkIdList.add(link2.getId());
         linkIdList.add(link3.getId());
-        NetworkRoute networkRoute = new LinkNetworkRouteImpl(link1.getId(), linkIdList, link4.getId());
+        NetworkRoute networkRoute = (NetworkRoute) linkNetworkRouteFactory.createRoute(link1.getId(), link4.getId());
+        networkRoute.setLinkIds(link1.getId(), linkIdList, link4.getId());
 
         List<TransitRouteStop> stops = new ArrayList<>(5);
         stops.add(f.createTransitRouteStop(this.stopA, Time.UNDEFINED_TIME, 0.0));
@@ -216,7 +220,7 @@ class TestFixture {
         TransitScheduleFactory f = schedule.getFactory();
 
         TransitLine line = f.createTransitLine(Id.create("SB", TransitLine.class));
-        NetworkRoute netRoute = new LinkNetworkRouteImpl(this.stopB.getLinkId(), Collections.emptyList(), this.stopC.getLinkId());
+        NetworkRoute netRoute = (NetworkRoute) linkNetworkRouteFactory.createRoute(this.stopB.getLinkId(), this.stopC.getLinkId());
         List<TransitRouteStop> stops = new ArrayList<>();
         stops.add(f.createTransitRouteStop(this.stopB, Time.UNDEFINED_TIME, 0));
         stops.add(f.createTransitRouteStop(this.stopC, malformed ? 0 : 120, Time.UNDEFINED_TIME));
@@ -266,7 +270,8 @@ class TestFixture {
         linkIdList.add(loopLink2.getId());
         linkIdList.add(link2.getId());
         linkIdList.add(loopLink3.getId());
-        NetworkRoute networkRoute = new LinkNetworkRouteImpl(link1.getId(), linkIdList, link3.getId());
+        NetworkRoute networkRoute = (NetworkRoute) linkNetworkRouteFactory.createRoute(link1.getId(), link3.getId());
+        networkRoute.setLinkIds(link1.getId(), linkIdList, link3.getId());
 
         List<TransitRouteStop> stops = new ArrayList<>(5);
         stops.add(f.createTransitRouteStop(this.stopA, Time.UNDEFINED_TIME, 0.0));

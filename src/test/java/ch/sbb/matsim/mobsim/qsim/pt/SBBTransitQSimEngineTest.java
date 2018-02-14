@@ -115,7 +115,8 @@ public class SBBTransitQSimEngineTest {
 
         QSim qSim = QSimUtils.createQSim(f.scenario, eventsManager, plugins);
 
-        Assert.assertEquals(SBBTransitQSimEngine.class, qSim.getTransitEngine().getClass());
+        // There is no qSim.getTransitEngine() anymore, so we check if the binding is there /sh feb 18
+        qSim.getChildInjector().getInstance(SBBTransitQSimEngine.class);
 
         EventsCollector collector = new EventsCollector();
         eventsManager.addHandler(collector);
@@ -164,7 +165,8 @@ public class SBBTransitQSimEngineTest {
 
         QSim qSim = QSimUtils.createQSim(f.scenario, eventsManager, plugins);
 
-        Assert.assertEquals(SBBTransitQSimEngine.class, qSim.getTransitEngine().getClass());
+        // There is no qSim.getTransitEngine() anymore, so we check if the binding is there /sh feb 18
+        qSim.getChildInjector().getInstance(SBBTransitQSimEngine.class);
 
         EventsCollector collector = new EventsCollector();
         eventsManager.addHandler(collector);
@@ -217,7 +219,8 @@ public class SBBTransitQSimEngineTest {
 
         QSim qSim = QSimUtils.createQSim(f.scenario, eventsManager, plugins);
 
-        Assert.assertEquals(SBBTransitQSimEngine.class, qSim.getTransitEngine().getClass());
+        // There is no qSim.getTransitEngine() anymore, so we check if the binding is there /sh feb 18
+        qSim.getChildInjector().getInstance(SBBTransitQSimEngine.class);
 
         EventsCollector collector = new EventsCollector();
         eventsManager.addHandler(collector);
@@ -283,7 +286,8 @@ public class SBBTransitQSimEngineTest {
 
         QSim qSim = QSimUtils.createQSim(f.scenario, eventsManager, plugins);
 
-        Assert.assertEquals(SBBTransitQSimEngine.class, qSim.getTransitEngine().getClass());
+        // There is no qSim.getTransitEngine() anymore, so we check if the binding is there /sh feb 18
+        qSim.getChildInjector().getInstance(SBBTransitQSimEngine.class);
 
         EventsCollector collector = new EventsCollector();
         eventsManager.addHandler(collector);
@@ -337,7 +341,8 @@ public class SBBTransitQSimEngineTest {
 
         QSim qSim = QSimUtils.createQSim(f.scenario, eventsManager, plugins);
 
-        Assert.assertEquals(SBBTransitQSimEngine.class, qSim.getTransitEngine().getClass());
+        // There is no qSim.getTransitEngine() anymore, so we check if the binding is there /sh feb 18
+        qSim.getChildInjector().getInstance(SBBTransitQSimEngine.class);
 
         EventsCollector collector = new EventsCollector();
         eventsManager.addHandler(collector);
@@ -389,7 +394,8 @@ public class SBBTransitQSimEngineTest {
 
         QSim qSim = QSimUtils.createQSim(f.scenario, eventsManager, plugins);
 
-        Assert.assertEquals(SBBTransitQSimEngine.class, qSim.getTransitEngine().getClass());
+        // There is no qSim.getTransitEngine() anymore, so we check if the binding is there /sh feb 18
+        qSim.getChildInjector().getInstance(SBBTransitQSimEngine.class);
 
         EventsCollector collector = new EventsCollector();
         eventsManager.addHandler(collector);
@@ -438,7 +444,8 @@ public class SBBTransitQSimEngineTest {
 
         QSim qSim = QSimUtils.createQSim(f.scenario, eventsManager, plugins);
 
-        Assert.assertEquals(SBBTransitQSimEngine.class, qSim.getTransitEngine().getClass());
+        // There is no qSim.getTransitEngine() anymore, so we check if the binding is there /sh feb 18
+        qSim.getChildInjector().getInstance(SBBTransitQSimEngine.class);
 
         EventsCollector collector = new EventsCollector();
         eventsManager.addHandler(collector);
@@ -495,7 +502,8 @@ public class SBBTransitQSimEngineTest {
 
         QSim qSim = QSimUtils.createQSim(f.scenario, eventsManager, plugins);
 
-        Assert.assertEquals(SBBTransitQSimEngine.class, qSim.getTransitEngine().getClass());
+        // There is no qSim.getTransitEngine() anymore, so we check if the binding is there /sh feb 18
+        qSim.getChildInjector().getInstance(SBBTransitQSimEngine.class);
 
         EventsCollector collector = new EventsCollector();
         eventsManager.addHandler(collector);

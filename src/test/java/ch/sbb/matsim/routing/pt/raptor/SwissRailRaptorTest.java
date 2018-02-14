@@ -22,11 +22,11 @@ import org.matsim.api.core.v01.network.Node;
 import org.matsim.api.core.v01.population.Activity;
 import org.matsim.api.core.v01.population.Leg;
 import org.matsim.api.core.v01.population.PlanElement;
+import org.matsim.api.core.v01.population.Route;
 import org.matsim.core.config.Config;
 import org.matsim.core.config.ConfigUtils;
 import org.matsim.core.population.PopulationUtils;
-import org.matsim.core.population.routes.GenericRouteImpl;
-import org.matsim.core.population.routes.LinkNetworkRouteImpl;
+import org.matsim.core.population.routes.LinkNetworkRouteFactory;
 import org.matsim.core.population.routes.NetworkRoute;
 import org.matsim.core.router.DefaultRoutingModules;
 import org.matsim.core.router.RoutingModule;
@@ -317,7 +317,7 @@ public class SwissRailRaptorTest {
         List<Leg> legs = router.calcRoute(new FakeFacility(fromCoord), new FakeFacility(toCoord), 25.0*3600, null);
         assertEquals(1, legs.size());
         assertEquals(TransportMode.transit_walk, legs.get(0).getMode());
-        assertTrue("expected GenericRoute in leg.", legs.get(0).getRoute() instanceof GenericRouteImpl);
+        assertEquals(legs.get(0).getRoute().getRouteType(), "generic");
         double actualTravelTime = 0.0;
         for (Leg leg : legs) {
             actualTravelTime += leg.getTravelTime();
@@ -547,7 +547,7 @@ public class SwissRailRaptorTest {
         Leg leg1 = PopulationUtils.createLeg(TransportMode.transit_walk);
         leg1.setDepartureTime(8*3600);
         leg1.setTravelTime(900);
-        GenericRouteImpl route1 = new GenericRouteImpl(Id.create(1, Link.class), Id.create(5, Link.class));
+        Route route1 = f.genericRouteFactory.createRoute(Id.create(1, Link.class), Id.create(5, Link.class));
         route1.setTravelTime(900);
         route1.setDistance(800);
         leg1.setRoute(route1);
@@ -572,7 +572,7 @@ public class SwissRailRaptorTest {
         Leg leg3 = PopulationUtils.createLeg(TransportMode.egress_walk);
         leg3.setDepartureTime(8.5*3600);
         leg3.setTravelTime(900);
-        GenericRouteImpl route3 = new GenericRouteImpl(Id.create(2, Link.class), Id.create(6, Link.class));
+        Route route3 = f.genericRouteFactory.createRoute(Id.create(2, Link.class), Id.create(6, Link.class));
         route3.setTravelTime(900);
         route3.setDistance(800);
         leg3.setRoute(route3);
@@ -597,7 +597,7 @@ public class SwissRailRaptorTest {
         Leg leg5 = PopulationUtils.createLeg(TransportMode.egress_walk);
         leg5.setDepartureTime(8.5*3600);
         leg5.setTravelTime(900);
-        GenericRouteImpl route5 = new GenericRouteImpl(Id.create(3, Link.class), Id.create(7, Link.class));
+        Route route5 = f.genericRouteFactory.createRoute(Id.create(3, Link.class), Id.create(7, Link.class));
         route5.setTravelTime(900);
         route5.setDistance(800);
         leg5.setRoute(route5);
@@ -616,7 +616,7 @@ public class SwissRailRaptorTest {
         Leg leg1 = PopulationUtils.createLeg(TransportMode.access_walk);
         leg1.setDepartureTime(8*3600);
         leg1.setTravelTime(900);
-        GenericRouteImpl route1 = new GenericRouteImpl(Id.create(1, Link.class), Id.create(5, Link.class));
+        Route route1 = f.genericRouteFactory.createRoute(Id.create(1, Link.class), Id.create(5, Link.class));
         route1.setTravelTime(900);
         route1.setDistance(800);
         leg1.setRoute(route1);
@@ -625,7 +625,7 @@ public class SwissRailRaptorTest {
         leg2.setDepartureTime(8.25*3600);
         leg2.setTravelTime(900);
         {
-            GenericRouteImpl route2 = new GenericRouteImpl(Id.create(5, Link.class), Id.create(3, Link.class));
+            Route route2 = f.genericRouteFactory.createRoute(Id.create(5, Link.class), Id.create(3, Link.class));
             route2.setTravelTime(900);
             route2.setDistance(800);
             leg2.setRoute(route2);
@@ -656,7 +656,7 @@ public class SwissRailRaptorTest {
         leg3.setDepartureTime(8.25*3600);
         leg3.setTravelTime(900);
         {
-            GenericRouteImpl route3 = new GenericRouteImpl(Id.create(5, Link.class), Id.create(3, Link.class));
+            Route route3 = f.genericRouteFactory.createRoute(Id.create(5, Link.class), Id.create(3, Link.class));
             route3.setTravelTime(900);
             route3.setDistance(800);
             leg3.setRoute(route3);
@@ -666,7 +666,7 @@ public class SwissRailRaptorTest {
         Leg leg4 = PopulationUtils.createLeg(TransportMode.egress_walk);
         leg4.setDepartureTime(8.5*3600);
         leg4.setTravelTime(900);
-        GenericRouteImpl route4 = new GenericRouteImpl(Id.create(2, Link.class), Id.create(6, Link.class));
+        Route route4 = f.genericRouteFactory.createRoute(Id.create(2, Link.class), Id.create(6, Link.class));
         route4.setTravelTime(900);
         route4.setDistance(800);
         leg4.setRoute(route4);
@@ -705,6 +705,7 @@ public class SwissRailRaptorTest {
         /*package*/ final MutableScenario scenario;
         /*package*/ final TransitSchedule schedule;
         /*package*/ final RaptorConfig routerConfig;
+        /*package*/ final LinkNetworkRouteFactory linkNetworkRouteFactory = new LinkNetworkRouteFactory();
 
         final Coord coord1;
         final Coord coord2;
@@ -798,7 +799,7 @@ public class SwissRailRaptorTest {
             { // line 1
                 TransitLine tLine = sb.createTransitLine(Id.create("1", TransitLine.class));
                 {
-                    NetworkRoute netRoute = new LinkNetworkRouteImpl(link1.getId(), link1.getId());
+                    NetworkRoute netRoute = (NetworkRoute) linkNetworkRouteFactory.createRoute(link1.getId(), link1.getId());
                     List<TransitRouteStop> stops = new ArrayList<>(2);
                     stops.add(sb.createTransitRouteStop(this.stop1, 0, 0));
                     stops.add(sb.createTransitRouteStop(this.stop2, 50, 50));
@@ -812,7 +813,7 @@ public class SwissRailRaptorTest {
             { // line 2
                 TransitLine tLine = sb.createTransitLine(Id.create("2", TransitLine.class));
                 {
-                    NetworkRoute netRoute = new LinkNetworkRouteImpl(link2.getId(), link3.getId());
+                    NetworkRoute netRoute = (NetworkRoute) linkNetworkRouteFactory.createRoute(link2.getId(), link3.getId());
                     List<TransitRouteStop> stops = new ArrayList<>(3);
                     stops.add(sb.createTransitRouteStop(this.stop3, 0, 0));
                     stops.add(sb.createTransitRouteStop(this.stop4, 50, 50));
@@ -827,7 +828,7 @@ public class SwissRailRaptorTest {
             { // line 3
                 TransitLine tLine = sb.createTransitLine(Id.create("3", TransitLine.class));
                 {
-                    NetworkRoute netRoute = new LinkNetworkRouteImpl(link4.getId(), link4.getId());
+                    NetworkRoute netRoute = (NetworkRoute) linkNetworkRouteFactory.createRoute(link4.getId(), link4.getId());
                     List<TransitRouteStop> stops = new ArrayList<>(2);
                     stops.add(sb.createTransitRouteStop(this.stop6, 0, 0));
                     stops.add(sb.createTransitRouteStop(this.stop7, 50, 50));
@@ -867,7 +868,8 @@ public class SwissRailRaptorTest {
         /*package*/ final Scenario scenario;
         /*package*/ final TransitSchedule schedule;
         /*package*/ final RaptorConfig routerConfig;
-
+        /*package*/ final LinkNetworkRouteFactory linkNetworkRouteFactory = new LinkNetworkRouteFactory();
+        
         final TransitStopFacility stop0;
         final TransitStopFacility stop1;
         final TransitStopFacility stop2;
@@ -930,7 +932,7 @@ public class SwissRailRaptorTest {
             {
                 TransitLine line0to1 = sb.createTransitLine(Id.create("0to1", TransitLine.class));
                 this.schedule.addTransitLine(line0to1);
-                NetworkRoute netRoute = new LinkNetworkRouteImpl(link0.getId(), link0.getId());
+                NetworkRoute netRoute = (NetworkRoute) linkNetworkRouteFactory.createRoute(link0.getId(), link0.getId());
                 List<Id<Link>> routeLinks = new ArrayList<>();
                 netRoute.setLinkIds(link0.getId(), routeLinks, link0.getId());
                 List<TransitRouteStop> stops = new ArrayList<>();
@@ -950,7 +952,7 @@ public class SwissRailRaptorTest {
             {
                 TransitLine line2to3 = sb.createTransitLine(Id.create("2to3", TransitLine.class));
                 this.schedule.addTransitLine(line2to3);
-                NetworkRoute netRoute = new LinkNetworkRouteImpl(link1.getId(), link1.getId());
+                NetworkRoute netRoute = (NetworkRoute) linkNetworkRouteFactory.createRoute(link1.getId(), link1.getId());
                 List<Id<Link>> routeLinks = new ArrayList<>();
                 netRoute.setLinkIds(link1.getId(), routeLinks, link1.getId());
                 List<TransitRouteStop> stops = new ArrayList<>();
@@ -1004,6 +1006,7 @@ public class SwissRailRaptorTest {
         /*package*/ final Scenario scenario;
         /*package*/ final TransitSchedule schedule;
         /*package*/ final RaptorConfig routerConfig;
+        /*package*/ final LinkNetworkRouteFactory linkNetworkRouteFactory = new LinkNetworkRouteFactory();
 
         final TransitStopFacility stop0;
         final TransitStopFacility stop1;
@@ -1050,7 +1053,7 @@ public class SwissRailRaptorTest {
             { // line 0
                 TransitLine line0 = sb.createTransitLine(this.lineId0);
                 this.schedule.addTransitLine(line0);
-                NetworkRoute netRoute = new LinkNetworkRouteImpl(linkId0, linkId10);
+                NetworkRoute netRoute = (NetworkRoute) linkNetworkRouteFactory.createRoute(linkId0, linkId10);
                 List<TransitRouteStop> stops = new ArrayList<>();
                 stops.add(sb.createTransitRouteStop(this.stop0, Time.UNDEFINED_TIME, 0.0));
                 stops.add(sb.createTransitRouteStop(this.stop1, 5*60.0, Time.UNDEFINED_TIME));
@@ -1062,7 +1065,7 @@ public class SwissRailRaptorTest {
             { // line 1
                 TransitLine line1 = sb.createTransitLine(this.lineId1);
                 this.schedule.addTransitLine(line1);
-                NetworkRoute netRoute = new LinkNetworkRouteImpl(linkId10, linkId20);
+                NetworkRoute netRoute = (NetworkRoute) linkNetworkRouteFactory.createRoute(linkId10, linkId20);
                 List<TransitRouteStop> stops = new ArrayList<>();
                 stops.add(sb.createTransitRouteStop(this.stop1, Time.UNDEFINED_TIME, 0.0));
                 stops.add(sb.createTransitRouteStop(this.stop2, 5*60.0, Time.UNDEFINED_TIME));
@@ -1074,7 +1077,7 @@ public class SwissRailRaptorTest {
             { // line 2
                 TransitLine line2 = sb.createTransitLine(this.lineId2);
                 this.schedule.addTransitLine(line2);
-                NetworkRoute netRoute = new LinkNetworkRouteImpl(linkId10, linkId20);
+                NetworkRoute netRoute = (NetworkRoute) linkNetworkRouteFactory.createRoute(linkId10, linkId20);
                 List<TransitRouteStop> stops = new ArrayList<>();
                 stops.add(sb.createTransitRouteStop(this.stop0, Time.UNDEFINED_TIME, 0.0));
                 stops.add(sb.createTransitRouteStop(this.stop3, 5*60.0, Time.UNDEFINED_TIME));
@@ -1086,7 +1089,7 @@ public class SwissRailRaptorTest {
             { // line 3
                 TransitLine line3 = sb.createTransitLine(this.lineId3);
                 this.schedule.addTransitLine(line3);
-                NetworkRoute netRoute = new LinkNetworkRouteImpl(linkId10, linkId20);
+                NetworkRoute netRoute = (NetworkRoute) linkNetworkRouteFactory.createRoute(linkId10, linkId20);
                 List<TransitRouteStop> stops = new ArrayList<>();
                 stops.add(sb.createTransitRouteStop(this.stop2, Time.UNDEFINED_TIME, 0.0));
                 stops.add(sb.createTransitRouteStop(this.stop3, Time.UNDEFINED_TIME, 5*60.0));

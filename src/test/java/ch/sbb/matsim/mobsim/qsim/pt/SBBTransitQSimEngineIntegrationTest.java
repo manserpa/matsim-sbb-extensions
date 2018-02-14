@@ -48,8 +48,8 @@ public class SBBTransitQSimEngineIntegrationTest {
         Assert.assertEquals(QSim.class, mobsim.getClass());
 
         QSim qSim = (QSim) mobsim;
-        TransitQSimEngine trEngine = qSim.getTransitEngine();
-        Assert.assertEquals(SBBTransitQSimEngine.class, trEngine.getClass());
+        // There is no qSim.getTransitEngine() anymore, so we check if the binding is there /sh feb18
+        qSim.getChildInjector().getInstance(SBBTransitQSimEngine.class);
     }
 
 }

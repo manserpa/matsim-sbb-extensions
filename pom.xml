@@ -8,7 +8,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>ch.sbb</groupId>
 	<artifactId>matsim-sbb-extension</artifactId>
-	<version>0.9.1</version>
+	<version>0.10.0-nov17-SNAPSHOT</version>
 	<name>MATSim-Extensions by SBB</name>
 	<description></description>
 
@@ -16,7 +16,7 @@
 		<repository>
 			<!-- MATSim is not on Maven central -->
 			<id>matsim</id>
-			<url>https://dl.bintray.com/matsim/matsim</url>
+			<url>https://dl.bintray.com/matsim-eth/matsim</url>
 		</repository>
 	</repositories>
 
@@ -25,13 +25,13 @@
 		<dependency>
 			<groupId>org.matsim</groupId>
 			<artifactId>matsim</artifactId>
-			<version>0.9.0</version>
+			<version>0.10.0-nov17</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.matsim</groupId>
 			<artifactId>matsim</artifactId>
-			<version>0.9.0</version>
+			<version>0.10.0-nov17</version>
 			<classifier>tests</classifier>
 			<scope>test</scope>
 			<type>test-jar</type>

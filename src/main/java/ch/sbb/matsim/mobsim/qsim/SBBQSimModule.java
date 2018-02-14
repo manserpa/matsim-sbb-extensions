@@ -15,11 +15,14 @@ import org.matsim.core.mobsim.qsim.PopulationPlugin;
 import org.matsim.core.mobsim.qsim.TeleportationPlugin;
 import org.matsim.core.mobsim.qsim.changeeventsengine.NetworkChangeEventsPlugin;
 import org.matsim.core.mobsim.qsim.messagequeueengine.MessageQueuePlugin;
+import org.matsim.core.mobsim.qsim.pt.ComplexTransitStopHandlerFactory;
+import org.matsim.core.mobsim.qsim.pt.TransitStopHandlerFactory;
 import org.matsim.core.mobsim.qsim.qnetsimengine.QNetsimEnginePlugin;
 
 import com.google.inject.Provides;
 
 import ch.sbb.matsim.mobsim.qsim.pt.SBBTransitEnginePlugin;
+import ch.sbb.matsim.mobsim.qsim.pt.SBBTransitQSimEngine;
 
 /**
  * @author mrieser / SBB
@@ -31,6 +34,12 @@ public class SBBQSimModule extends com.google.inject.AbstractModule {
     @Override
     protected void configure() {
         // let's hope the normal QSimModule's configuration still holds.
+    	
+    	// This needs to be here, since QSimModule defines also a TransitStopHandlerFactory.
+    	// If the QSimPlugin defines a new one, the old one cannot be overridden (there will be 
+    	// an exception). Therefore, this needs to be bound here, because then we override the
+    	// default one. /sh feb 18
+    	bind(TransitStopHandlerFactory.class).to(ComplexTransitStopHandlerFactory.class).asEagerSingleton();
     }
 
     // @SuppressWarnings("static-method")

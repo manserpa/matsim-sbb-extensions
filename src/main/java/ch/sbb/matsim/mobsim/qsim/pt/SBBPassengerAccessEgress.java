@@ -147,14 +147,17 @@ public class SBBPassengerAccessEgress implements PassengerAccessEgress {
     private List<PTPassengerAgent> findPassengersEntering(TransitRoute transitRoute, TransitLine transitLine, TransitVehicle vehicle,
                                                           final TransitStopFacility stop, List<TransitRouteStop> stopsToCome, int freeCapacity, double now) {
         ArrayList<PTPassengerAgent> passengersEntering = new ArrayList<>();
-        for (PTPassengerAgent agent : this.agentTracker.getAgentsAtStop(stop.getId())) {
-            if (freeCapacity == 0) {
-                break;
-            }
-            if (agent.getEnterTransitRoute(transitLine, transitRoute, stopsToCome, vehicle)) {
-                passengersEntering.add(agent);
-                freeCapacity--;
-            }
+        
+        if (this.agentTracker.getAgentsAtStop().containsKey(stop.getId())) {
+	        for (PTPassengerAgent agent : this.agentTracker.getAgentsAtStop().get(stop.getId())) {
+	            if (freeCapacity == 0) {
+	                break;
+	            }
+	            if (agent.getEnterTransitRoute(transitLine, transitRoute, stopsToCome, vehicle)) {
+	                passengersEntering.add(agent);
+	                freeCapacity--;
+	            }
+	        }
         }
         return passengersEntering;
     }
@@ -162,10 +165,12 @@ public class SBBPassengerAccessEgress implements PassengerAccessEgress {
     private List<PTPassengerAgent> findAllPassengersWaiting(TransitRoute transitRoute, TransitLine transitLine, TransitVehicle vehicle,
                                                           final TransitStopFacility stop, List<TransitRouteStop> stopsToCome, double now) {
         ArrayList<PTPassengerAgent> passengersEntering = new ArrayList<>();
-        for (PTPassengerAgent agent : this.agentTracker.getAgentsAtStop(stop.getId())) {
-            if (agent.getEnterTransitRoute(transitLine, transitRoute, stopsToCome, vehicle)) {
-                passengersEntering.add(agent);
-            }
+        if (this.agentTracker.getAgentsAtStop().containsKey(stop.getId())) {
+	        for (PTPassengerAgent agent : this.agentTracker.getAgentsAtStop().get(stop.getId())) {
+	            if (agent.getEnterTransitRoute(transitLine, transitRoute, stopsToCome, vehicle)) {
+	                passengersEntering.add(agent);
+	            }
+	        }
         }
         return passengersEntering;
     }

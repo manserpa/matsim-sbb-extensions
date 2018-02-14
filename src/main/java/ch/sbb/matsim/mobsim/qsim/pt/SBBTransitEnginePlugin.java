@@ -29,7 +29,12 @@ public class SBBTransitEnginePlugin extends AbstractQSimPlugin {
             @Override
             protected void configure() {
                 bind(SBBTransitQSimEngine.class).asEagerSingleton();
-				bind(TransitStopHandlerFactory.class).to(ComplexTransitStopHandlerFactory.class).asEagerSingleton();
+                
+                // Refactoring for 0.10.0:
+                //   The TransitStopHandlerFactory must be bound in the SBBQSimModule, because
+                //   the default version is bound in QSimModule. If it is just introduced here
+                //   an exception is thrown, because these modules here cannot override existing
+                //   bindings
             }
         });
     }

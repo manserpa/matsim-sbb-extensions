@@ -12,7 +12,7 @@ import org.matsim.api.core.v01.population.Leg;
 import org.matsim.api.core.v01.population.Person;
 import org.matsim.api.core.v01.population.Route;
 import org.matsim.core.population.PopulationUtils;
-import org.matsim.core.population.routes.GenericRouteImpl;
+import org.matsim.core.population.routes.GenericRouteFactory;
 import org.matsim.core.utils.geometry.CoordUtils;
 import org.matsim.facilities.Facility;
 import org.matsim.pt.router.TransitRouter;
@@ -128,7 +128,7 @@ public class SwissRailRaptor implements TransitRouter {
                 Id<Link> endLinkId =  part.toStop == null ? null : part.toStop.getLinkId();
 //                Id<Link> startLinkId = part.fromStop == null ? route.fromFacility.getLinkId() : part.fromStop.getLinkId();
 //                Id<Link> endLinkId =  part.toStop == null ? route.toFacility.getLinkId() : part.toStop.getLinkId();
-                Route walkRoute = new GenericRouteImpl(startLinkId, endLinkId);
+                Route walkRoute = new GenericRouteFactory().createRoute(startLinkId, endLinkId);
                 walkRoute.setTravelTime(part.travelTime);
                 walkLeg.setRoute(walkRoute);
                 legs.add(walkLeg);
@@ -187,7 +187,8 @@ public class SwissRailRaptor implements TransitRouter {
                         mergedLeg.setTravelTime(prevLeg.getTravelTime() + leg.getTravelTime());
                         Route prevRoute = prevLeg.getRoute();
                         Route thisRoute = leg.getRoute();
-                        Route mergedRoute = new GenericRouteImpl(prevRoute.getStartLinkId(), thisRoute.getEndLinkId());
+                        
+                        Route mergedRoute = new GenericRouteFactory().createRoute(prevRoute.getStartLinkId(), thisRoute.getEndLinkId());
                         mergedRoute.setDistance(prevRoute.getDistance() + thisRoute.getDistance());
                         mergedRoute.setTravelTime(prevRoute.getTravelTime() + thisRoute.getTravelTime());
                         mergedLeg.setRoute(mergedRoute);
