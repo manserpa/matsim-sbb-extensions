@@ -14,8 +14,7 @@
 
 	<repositories>
 		<repository>
-			<!-- MATSim is not on Maven central -->
-			<id>matsim</id>
+			<id>matsim-eth-bintray</id>
 			<url>https://dl.bintray.com/matsim-eth/matsim</url>
 		</repository>
 	</repositories>
@@ -84,12 +83,12 @@
 
 	<distributionManagement>
 		<repository>
-			<id>repo</id>
-			<url>http://repo.sbb.ch/content/repositories/hosted.memop.releases/</url>
+			<id>matsim-eth-bintray</id>
+			<url>https://api.bintray.com/maven/matsim-eth/matsim/av/;publish=1</url>
 		</repository>
 		<snapshotRepository>
-			<id>repo</id>
-			<url>http://repo.sbb.ch/content/repositories/hosted.memop.snapshots/</url>
+			<id>packagecloud-eth-ivt</id>
+			<url>packagecloud+https://packagecloud.io/eth-ivt/matsim</url>
 		</snapshotRepository>
 	</distributionManagement>
 
