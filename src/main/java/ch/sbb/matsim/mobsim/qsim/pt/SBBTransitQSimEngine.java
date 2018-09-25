@@ -44,6 +44,7 @@ import org.matsim.core.mobsim.qsim.pt.TransitStopAgentTracker;
 import org.matsim.core.mobsim.qsim.pt.TransitStopHandlerFactory;
 import org.matsim.core.mobsim.qsim.pt.TransitVehicle;
 import org.matsim.core.population.routes.NetworkRoute;
+import org.matsim.core.replanning.ReplanningContext;
 import org.matsim.core.utils.collections.CollectionUtils;
 import org.matsim.core.utils.misc.Time;
 import org.matsim.pt.Umlauf;
@@ -78,20 +79,19 @@ public class SBBTransitQSimEngine extends TransitQSimEngine /*implements Departu
     private TransitDriverAgentFactory networkDriverFactory;
     private TransitStopHandlerFactory stopHandlerFactory = new SimpleTransitStopHandlerFactory();
     private final PriorityQueue<TransitEvent> eventQueue = new PriorityQueue<>();
-    private final boolean createLinkEvents;
+    private boolean createLinkEvents = false;
     private final Map<TransitRoute, List<Link[]>> linksCache;
     private final PriorityQueue<LinkEvent> linkEventQueue;
 
     @Inject
-    public SBBTransitQSimEngine(QSim qSim) {
+    public SBBTransitQSimEngine(QSim qSim, ReplanningContext context) {
         super(qSim);
         this.qSim = qSim;
         this.config = ConfigUtils.addOrGetModule(qSim.getScenario().getConfig(), SBBTransitConfigGroup.GROUP_NAME, SBBTransitConfigGroup.class);
         this.ptConfig = qSim.getScenario().getConfig().transit();
-        this.createLinkEvents = this.config.isCreateLinkEvents();
         this.schedule = qSim.getScenario().getTransitSchedule();
         this.agentTracker = new TransitStopAgentTracker(qSim.getEventsManager());
-        if (this.createLinkEvents) {
+        if (this.config.isCreateLinkEvents()) {
             this.linkEventQueue = new PriorityQueue<>();
             this.linksCache = new ConcurrentHashMap<>();
         } else {
@@ -140,7 +140,8 @@ public class SBBTransitQSimEngine extends TransitQSimEngine /*implements Departu
 
     @Override
     public void onPrepareSim() {
-        // nothing to do, all pre-processing is done in insertAgentsIntoMobsim
+        // not much to do, all pre-processing is done in insertAgentsIntoMobsim
+        this.createLinkEvents = this.config.isCreateLinkEvents();
     }
 
     @Override
@@ -197,6 +198,11 @@ public class SBBTransitQSimEngine extends TransitQSimEngine /*implements Departu
         commonModes.retainAll(passengerModes);
         if (!commonModes.isEmpty()) {
             throw new RuntimeException("There are modes configured to be pt passenger modes as well as deterministic service modes. This will not work! common modes = " + CollectionUtils.setToString(commonModes));
+        }
+        Set<String> mainModes = new HashSet<>(this.qSim.getScenario().getConfig().qsim().getMainModes());
+        mainModes.retainAll(deterministicModes);
+        if (!mainModes.isEmpty()) {
+            throw new RuntimeException("There are modes configured to be deterministic service modes as well as qsim main modes. This will not work! common modes = " + CollectionUtils.setToString(mainModes));
         }
 
         for (TransitLine line : schedule.getTransitLines().values()) {
@@ -272,7 +278,10 @@ public class SBBTransitQSimEngine extends TransitQSimEngine /*implements Departu
         if (this.createLinkEvents) {
             Id<Link> linkId = driver.getCurrentLinkId();
             String mode = driver.getMode();
-            this.qSim.getEventsManager().processEvent(new VehicleEntersTrafficEvent(now, driver.getId(), linkId, driver.getVehicle().getId(), mode, 1.0));
+            if(driver.getVehicle().getId().toString().contains("para_"))
+                this.qSim.getEventsManager().processEvent(new VehicleEntersTrafficEvent(now, driver.getId(), linkId, driver.getVehicle().getId(), mode, 0.5));
+            else
+                this.qSim.getEventsManager().processEvent(new VehicleEntersTrafficEvent(now, driver.getId(), linkId, driver.getVehicle().getId(), mode, 1.0));
         }
         TransitEvent event = new TransitEvent(now, TransitEventType.ArrivalAtStop, context);
         this.eventQueue.add(event);
@@ -313,7 +322,7 @@ public class SBBTransitQSimEngine extends TransitQSimEngine /*implements Departu
         TransitRouteStop nextStop = event.context.advanceStop();
         if (nextStop != null) {
             double arrOffset = nextStop.getArrivalOffset();
-            if (arrOffset == Time.UNDEFINED_TIME) {
+            if (Time.isUndefinedTime(arrOffset)) {
                 arrOffset = nextStop.getDepartureOffset();
             }
             double arrTime = driver.getDeparture().getDepartureTime() + arrOffset;
@@ -332,7 +341,10 @@ public class SBBTransitQSimEngine extends TransitQSimEngine /*implements Departu
             if (this.createLinkEvents) {
                 Id<Link> linkId = driver.getDestinationLinkId();
                 String mode = driver.getMode();
-                this.qSim.getEventsManager().processEvent(new VehicleLeavesTrafficEvent(event.time, driver.getId(), linkId, driver.getVehicle().getId(), mode, 1.0));
+                if(driver.getVehicle().getId().toString().contains("para_"))
+                    this.qSim.getEventsManager().processEvent(new VehicleLeavesTrafficEvent(event.time, driver.getId(), linkId, driver.getVehicle().getId(), mode, 0.5));
+                else
+                    this.qSim.getEventsManager().processEvent(new VehicleLeavesTrafficEvent(event.time, driver.getId(), linkId, driver.getVehicle().getId(), mode, 1.0));
             }
             this.qSim.getEventsManager().processEvent(new PersonLeavesVehicleEvent(event.time, driver.getId(), driver.getVehicle().getId()));
             driver.endLegAndComputeNextState(event.time);

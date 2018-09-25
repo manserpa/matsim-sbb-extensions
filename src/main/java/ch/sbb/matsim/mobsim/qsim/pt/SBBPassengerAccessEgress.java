@@ -5,6 +5,7 @@
 package ch.sbb.matsim.mobsim.qsim.pt;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.matsim.api.core.v01.Id;
@@ -60,7 +61,7 @@ public class SBBPassengerAccessEgress implements PassengerAccessEgress {
      * It could not be directly used as the class itself is package-protected and not visible in our package.
      *
      * @return 0.0 (no more agents currently to board or leave), or
-      *        1.0 (there were passenger actions this time step, need to recheck next time step again)
+     *        1.0 (there were passenger actions this time step, need to recheck next time step again)
      */
     double handlePassengersWithPhysicalLimits(TransitStopFacility stop, TransitVehicle vehicle, TransitLine line, TransitRoute route, List<TransitRouteStop> upcomingStops, double now) {
         ArrayList<PTPassengerAgent> passengersLeaving = findPassengersLeaving(vehicle, stop);
@@ -146,33 +147,36 @@ public class SBBPassengerAccessEgress implements PassengerAccessEgress {
      */
     private List<PTPassengerAgent> findPassengersEntering(TransitRoute transitRoute, TransitLine transitLine, TransitVehicle vehicle,
                                                           final TransitStopFacility stop, List<TransitRouteStop> stopsToCome, int freeCapacity, double now) {
-        ArrayList<PTPassengerAgent> passengersEntering = new ArrayList<>();
-        
-        if (this.agentTracker.getAgentsAtStop().containsKey(stop.getId())) {
-	        for (PTPassengerAgent agent : this.agentTracker.getAgentsAtStop().get(stop.getId())) {
-	            if (freeCapacity == 0) {
-	                break;
-	            }
-	            if (agent.getEnterTransitRoute(transitLine, transitRoute, stopsToCome, vehicle)) {
-	                passengersEntering.add(agent);
-	                freeCapacity--;
-	            }
-	        }
+        List<PTPassengerAgent> passengers = this.agentTracker.getAgentsAtStop().get(stop.getId());
+        if (passengers != null) {
+            ArrayList<PTPassengerAgent> passengersEntering = new ArrayList<>();
+            for (PTPassengerAgent agent : passengers) {
+                if (freeCapacity == 0) {
+                    break;
+                }
+                if (agent.getEnterTransitRoute(transitLine, transitRoute, stopsToCome, vehicle)) {
+                    passengersEntering.add(agent);
+                    freeCapacity--;
+                }
+            }
+            return passengersEntering;
         }
-        return passengersEntering;
+        return Collections.emptyList();
     }
 
     private List<PTPassengerAgent> findAllPassengersWaiting(TransitRoute transitRoute, TransitLine transitLine, TransitVehicle vehicle,
-                                                          final TransitStopFacility stop, List<TransitRouteStop> stopsToCome, double now) {
-        ArrayList<PTPassengerAgent> passengersEntering = new ArrayList<>();
-        if (this.agentTracker.getAgentsAtStop().containsKey(stop.getId())) {
-	        for (PTPassengerAgent agent : this.agentTracker.getAgentsAtStop().get(stop.getId())) {
-	            if (agent.getEnterTransitRoute(transitLine, transitRoute, stopsToCome, vehicle)) {
-	                passengersEntering.add(agent);
-	            }
-	        }
+                                                            final TransitStopFacility stop, List<TransitRouteStop> stopsToCome, double now) {
+        List<PTPassengerAgent> passengers = this.agentTracker.getAgentsAtStop().get(stop.getId());
+        if (passengers != null) {
+            ArrayList<PTPassengerAgent> passengersEntering = new ArrayList<>();
+            for (PTPassengerAgent agent : passengers) {
+                if (agent.getEnterTransitRoute(transitLine, transitRoute, stopsToCome, vehicle)) {
+                    passengersEntering.add(agent);
+                }
+            }
+            return passengersEntering;
         }
-        return passengersEntering;
+        return Collections.emptyList();
     }
 
     private void fireBoardingDeniedEvents(TransitVehicle vehicle, double now, List<PTPassengerAgent> agents){
@@ -183,3 +187,4 @@ public class SBBPassengerAccessEgress implements PassengerAccessEgress {
     }
 
 }
+

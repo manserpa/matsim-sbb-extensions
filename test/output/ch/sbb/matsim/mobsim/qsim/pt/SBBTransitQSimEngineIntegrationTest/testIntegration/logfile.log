@@ -1,0 +1,1449 @@
+2018-06-13 18:17:15,788  INFO Gbl:57 JVM: 1.8.0_151-1-ojdkbuild; Oracle Corporation; mixed mode; 64-bit
+2018-06-13 18:17:15,788  INFO Gbl:61 OS: Windows 10; 10.0; amd64
+2018-06-13 18:17:15,789  INFO Gbl:64 CPU cores: 4
+2018-06-13 18:17:15,790  INFO Gbl:65 max. Memory: 2695.5MB (2826436608B)
+2018-06-13 18:17:15,790  INFO Gbl:103 MATSim-Build: ra9816f5efb105478ae488ff0895900ff4b58073b (2018-04-27 20:27:38)
+2018-06-13 18:17:15,790  INFO AbstractController:58 Used Controler-Class: org.matsim.core.controler.NewControler
+2018-06-13 18:17:15,793  INFO Config:536 ConfigConsistencyChecker with runtime type=class org.matsim.core.config.consistency.ConfigConsistencyCheckerImpl was already added; not adding it a second time
+2018-06-13 18:17:15,795  INFO Injector:83 org.matsim.core.mobsim.qsim.pt.TransitStopHandlerFactory 
+2018-06-13 18:17:15,795  INFO Injector:84   --> provider: FactoryProxy{key=Key[type=org.matsim.core.mobsim.qsim.pt.TransitStopHandlerFactory, annotation=[none]], provider=com.google.inject.internal.ConstructorBindingImpl$Factory@2cb2fc20}[Scopes.SINGLETON]
+2018-06-13 18:17:15,799  INFO Injector:85   --> source: ch.sbb.matsim.mobsim.qsim.SBBQSimModule.configure(SBBQSimModule.java:42)
+2018-06-13 18:17:15,799  INFO Injector:87   --> scope: eager singleton
+2018-06-13 18:17:15,800  INFO Injector:91 
+2018-06-13 18:17:15,800  INFO Injector:83 org.matsim.api.core.v01.Scenario 
+2018-06-13 18:17:15,800  INFO Injector:84   --> provider: of(org.matsim.core.scenario.MutableScenario@4fa1c212)
+2018-06-13 18:17:15,800  INFO Injector:85   --> source: org.matsim.core.scenario.ScenarioByInstanceModule.install(ScenarioByInstanceModule.java:31)
+2018-06-13 18:17:15,800  INFO Injector:87   --> scope: eager singleton
+2018-06-13 18:17:15,800  INFO Injector:91 
+2018-06-13 18:17:15,802  INFO Injector:83 org.matsim.pt.transitSchedule.api.TransitSchedule 
+2018-06-13 18:17:15,802  INFO Injector:84   --> provider: Key[type=org.matsim.core.scenario.ScenarioByInstanceModule$TransitScheduleProvider, annotation=[none]]
+2018-06-13 18:17:15,803  INFO Injector:85   --> source: org.matsim.core.scenario.ScenarioByInstanceModule.install(ScenarioByInstanceModule.java:33)
+2018-06-13 18:17:15,803  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,803  INFO Injector:91 
+2018-06-13 18:17:15,803  INFO Injector:83 org.matsim.vehicles.Vehicles 
+2018-06-13 18:17:15,803  INFO Injector:84   --> provider: Key[type=org.matsim.core.scenario.ScenarioByInstanceModule$TransitVehiclesProvider, annotation=[none]]
+2018-06-13 18:17:15,803  INFO Injector:85   --> source: org.matsim.core.scenario.ScenarioByInstanceModule.install(ScenarioByInstanceModule.java:34)
+2018-06-13 18:17:15,803  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,821  INFO Injector:91 
+2018-06-13 18:17:15,821  INFO Injector:83 org.matsim.api.core.v01.network.Network 
+2018-06-13 18:17:15,837  INFO Injector:84   --> provider: @Provides org.matsim.core.scenario.ScenarioByInstanceModule.provideNetwork(ScenarioByInstanceModule.java:39)
+2018-06-13 18:17:15,837  INFO Injector:85   --> source: org.matsim.api.core.v01.network.Network org.matsim.core.scenario.ScenarioByInstanceModule.provideNetwork(org.matsim.api.core.v01.Scenario)
+2018-06-13 18:17:15,837  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,837  INFO Injector:91 
+2018-06-13 18:17:15,837  INFO Injector:83 org.matsim.vehicles.Vehicles 
+2018-06-13 18:17:15,837  INFO Injector:84   --> provider: @Provides org.matsim.core.scenario.ScenarioByInstanceModule.provideVehicles(ScenarioByInstanceModule.java:61)
+2018-06-13 18:17:15,837  INFO Injector:85   --> source: org.matsim.vehicles.Vehicles org.matsim.core.scenario.ScenarioByInstanceModule.provideVehicles(org.matsim.api.core.v01.Scenario)
+2018-06-13 18:17:15,837  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,849  INFO Injector:91 
+2018-06-13 18:17:15,849  INFO Injector:83 org.matsim.lanes.data.Lanes 
+2018-06-13 18:17:15,850  INFO Injector:84   --> provider: @Provides org.matsim.core.scenario.ScenarioByInstanceModule.provideLanes(ScenarioByInstanceModule.java:66)
+2018-06-13 18:17:15,852  INFO Injector:85   --> source: org.matsim.lanes.data.Lanes org.matsim.core.scenario.ScenarioByInstanceModule.provideLanes(org.matsim.api.core.v01.Scenario)
+2018-06-13 18:17:15,857  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,858  INFO Injector:91 
+2018-06-13 18:17:15,858  INFO Injector:83 org.matsim.facilities.ActivityFacilities 
+2018-06-13 18:17:15,858  INFO Injector:84   --> provider: @Provides org.matsim.core.scenario.ScenarioByInstanceModule.provideActivityFacilities(ScenarioByInstanceModule.java:51)
+2018-06-13 18:17:15,858  INFO Injector:85   --> source: org.matsim.facilities.ActivityFacilities org.matsim.core.scenario.ScenarioByInstanceModule.provideActivityFacilities(org.matsim.api.core.v01.Scenario)
+2018-06-13 18:17:15,858  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,858  INFO Injector:91 
+2018-06-13 18:17:15,858  INFO Injector:83 org.matsim.api.core.v01.population.Population 
+2018-06-13 18:17:15,858  INFO Injector:84   --> provider: @Provides org.matsim.core.scenario.ScenarioByInstanceModule.providePopulation(ScenarioByInstanceModule.java:43)
+2018-06-13 18:17:15,858  INFO Injector:85   --> source: org.matsim.api.core.v01.population.Population org.matsim.core.scenario.ScenarioByInstanceModule.providePopulation(org.matsim.api.core.v01.Scenario)
+2018-06-13 18:17:15,858  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,858  INFO Injector:91 
+2018-06-13 18:17:15,858  INFO Injector:83 org.matsim.households.Households 
+2018-06-13 18:17:15,858  INFO Injector:84   --> provider: @Provides org.matsim.core.scenario.ScenarioByInstanceModule.provideHouseholds(ScenarioByInstanceModule.java:56)
+2018-06-13 18:17:15,858  INFO Injector:85   --> source: org.matsim.households.Households org.matsim.core.scenario.ScenarioByInstanceModule.provideHouseholds(org.matsim.api.core.v01.Scenario)
+2018-06-13 18:17:15,858  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,858  INFO Injector:91 
+2018-06-13 18:17:15,858  INFO Injector:83 org.matsim.api.core.v01.population.PopulationFactory 
+2018-06-13 18:17:15,858  INFO Injector:84   --> provider: @Provides org.matsim.core.scenario.ScenarioByInstanceModule.providePopulationFactory(ScenarioByInstanceModule.java:47)
+2018-06-13 18:17:15,858  INFO Injector:85   --> source: org.matsim.api.core.v01.population.PopulationFactory org.matsim.core.scenario.ScenarioByInstanceModule.providePopulationFactory(org.matsim.api.core.v01.population.Population)
+2018-06-13 18:17:15,858  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,858  INFO Injector:91 
+2018-06-13 18:17:15,858  INFO Injector:83 org.matsim.core.controler.ControlerI 
+2018-06-13 18:17:15,858  INFO Injector:84   --> provider: FactoryProxy{key=Key[type=org.matsim.core.controler.ControlerI, annotation=[none]], provider=com.google.inject.internal.ConstructorBindingImpl$Factory@51c693d}[Scopes.SINGLETON]
+2018-06-13 18:17:15,858  INFO Injector:85   --> source: org.matsim.core.controler.NewControlerModule.install(NewControlerModule.java:8)
+2018-06-13 18:17:15,858  INFO Injector:87   --> scope: eager singleton
+2018-06-13 18:17:15,869  INFO Injector:91 
+2018-06-13 18:17:15,869  INFO Injector:83 org.matsim.core.controler.ControlerListenerManager 
+2018-06-13 18:17:15,870  INFO Injector:84   --> provider: FactoryProxy{key=Key[type=org.matsim.core.controler.ControlerListenerManager, annotation=[none]], provider=com.google.inject.internal.ConstructorBindingImpl$Factory@3b79fd76[Scopes.SINGLETON]}
+2018-06-13 18:17:15,870  INFO Injector:85   --> source: org.matsim.core.controler.NewControlerModule.install(NewControlerModule.java:10)
+2018-06-13 18:17:15,870  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,871  INFO Injector:91 
+2018-06-13 18:17:15,871  INFO Injector:83 org.matsim.core.controler.PrepareForSim 
+2018-06-13 18:17:15,871  INFO Injector:84   --> provider: FactoryProxy{key=Key[type=org.matsim.core.controler.PrepareForSim, annotation=[none]], provider=com.google.inject.internal.ConstructorBindingImpl$Factory@1787bc24}
+2018-06-13 18:17:15,871  INFO Injector:85   --> source: org.matsim.core.controler.NewControlerModule.install(NewControlerModule.java:11)
+2018-06-13 18:17:15,872  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,872  INFO Injector:91 
+2018-06-13 18:17:15,872  INFO Injector:83 org.matsim.core.controler.TerminationCriterion 
+2018-06-13 18:17:15,872  INFO Injector:84   --> provider: FactoryProxy{key=Key[type=org.matsim.core.controler.TerminationCriterion, annotation=[none]], provider=com.google.inject.internal.ConstructorBindingImpl$Factory@26df6e3a}
+2018-06-13 18:17:15,872  INFO Injector:85   --> source: org.matsim.core.controler.NewControlerModule.install(NewControlerModule.java:14)
+2018-06-13 18:17:15,872  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,872  INFO Injector:91 
+2018-06-13 18:17:15,873  INFO Injector:83 org.matsim.core.controler.MatsimServices 
+2018-06-13 18:17:15,873  INFO Injector:84   --> provider: FactoryProxy{key=Key[type=org.matsim.core.controler.MatsimServices, annotation=[none]], provider=com.google.inject.internal.ConstructorBindingImpl$Factory@79c97cb}
+2018-06-13 18:17:15,874  INFO Injector:85   --> source: org.matsim.core.controler.NewControlerModule.install(NewControlerModule.java:15)
+2018-06-13 18:17:15,874  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,874  INFO Injector:91 
+2018-06-13 18:17:15,874  INFO Injector:83 org.matsim.core.controler.corelisteners.PlansScoring 
+2018-06-13 18:17:15,874  INFO Injector:84   --> provider: FactoryProxy{key=Key[type=org.matsim.core.controler.corelisteners.PlansScoring, annotation=[none]], provider=com.google.inject.internal.ConstructorBindingImpl$Factory@27508c5d[Scopes.SINGLETON]}
+2018-06-13 18:17:15,877  INFO Injector:85   --> source: org.matsim.core.scoring.PlansScoringModule.install(PlansScoringModule.java:11)
+2018-06-13 18:17:15,877  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,877  INFO Injector:91 
+2018-06-13 18:17:15,877  INFO Injector:83 org.matsim.core.controler.corelisteners.PlansReplanning 
+2018-06-13 18:17:15,878  INFO Injector:84   --> provider: FactoryProxy{key=Key[type=org.matsim.core.controler.corelisteners.PlansReplanning, annotation=[none]], provider=com.google.inject.internal.ConstructorBindingImpl$Factory@379614be[Scopes.SINGLETON]}
+2018-06-13 18:17:15,878  INFO Injector:85   --> source: org.matsim.core.controler.corelisteners.ControlerDefaultCoreListenersModule.install(ControlerDefaultCoreListenersModule.java:38)
+2018-06-13 18:17:15,878  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,878  INFO Injector:91 
+2018-06-13 18:17:15,878  INFO Injector:83 org.matsim.core.controler.corelisteners.PlansDumping 
+2018-06-13 18:17:15,879  INFO Injector:84   --> provider: FactoryProxy{key=Key[type=org.matsim.core.controler.corelisteners.PlansDumping, annotation=[none]], provider=com.google.inject.internal.ConstructorBindingImpl$Factory@a307a8c[Scopes.SINGLETON]}
+2018-06-13 18:17:15,879  INFO Injector:85   --> source: org.matsim.core.controler.corelisteners.ControlerDefaultCoreListenersModule.install(ControlerDefaultCoreListenersModule.java:39)
+2018-06-13 18:17:15,879  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,879  INFO Injector:91 
+2018-06-13 18:17:15,880  INFO Injector:83 org.matsim.core.controler.corelisteners.EventsHandling 
+2018-06-13 18:17:15,881  INFO Injector:84   --> provider: FactoryProxy{key=Key[type=org.matsim.core.controler.corelisteners.EventsHandling, annotation=[none]], provider=com.google.inject.internal.ConstructorBindingImpl$Factory@59d4cd39[Scopes.SINGLETON]}
+2018-06-13 18:17:15,881  INFO Injector:85   --> source: org.matsim.core.controler.corelisteners.ControlerDefaultCoreListenersModule.install(ControlerDefaultCoreListenersModule.java:40)
+2018-06-13 18:17:15,881  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,882  INFO Injector:91 
+2018-06-13 18:17:15,882  INFO Injector:83 org.matsim.core.controler.corelisteners.DumpDataAtEnd 
+2018-06-13 18:17:15,882  INFO Injector:84   --> provider: FactoryProxy{key=Key[type=org.matsim.core.controler.corelisteners.DumpDataAtEnd, annotation=[none]], provider=com.google.inject.internal.ConstructorBindingImpl$Factory@127a7a2e[Scopes.SINGLETON]}
+2018-06-13 18:17:15,882  INFO Injector:85   --> source: org.matsim.core.controler.corelisteners.ControlerDefaultCoreListenersModule.install(ControlerDefaultCoreListenersModule.java:41)
+2018-06-13 18:17:15,883  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,883  INFO Injector:91 
+2018-06-13 18:17:15,883  INFO Injector:83 org.matsim.core.api.experimental.events.EventsManager 
+2018-06-13 18:17:15,883  INFO Injector:84   --> provider: FactoryProxy{key=Key[type=org.matsim.core.api.experimental.events.EventsManager, annotation=[none]], provider=com.google.inject.internal.ConstructorBindingImpl$Factory@45ac5f9b}[Scopes.SINGLETON]
+2018-06-13 18:17:15,883  INFO Injector:85   --> source: org.matsim.core.events.EventsManagerModule.install(EventsManagerModule.java:23)
+2018-06-13 18:17:15,883  INFO Injector:87   --> scope: eager singleton
+2018-06-13 18:17:15,885  INFO Injector:91 
+2018-06-13 18:17:15,885  INFO Injector:83 org.matsim.core.mobsim.framework.Mobsim 
+2018-06-13 18:17:15,885  INFO Injector:84   --> provider: Key[type=org.matsim.core.mobsim.qsim.QSimProvider, annotation=[none]]
+2018-06-13 18:17:15,885  INFO Injector:85   --> source: org.matsim.core.mobsim.qsim.QSimModule.configure(QSimModule.java:28)
+2018-06-13 18:17:15,885  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,885  INFO Injector:91 
+2018-06-13 18:17:15,885  INFO Injector:83 org.matsim.core.mobsim.qsim.qnetsimengine.QNetworkFactory 
+2018-06-13 18:17:15,893  INFO Injector:84   --> provider: FactoryProxy{key=Key[type=org.matsim.core.mobsim.qsim.qnetsimengine.QNetworkFactory, annotation=[none]], provider=com.google.inject.internal.ConstructorBindingImpl$Factory@68f1b17f}
+2018-06-13 18:17:15,893  INFO Injector:85   --> source: org.matsim.core.mobsim.qsim.QSimModule.configure(QSimModule.java:32)
+2018-06-13 18:17:15,893  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,893  INFO Injector:91 
+2018-06-13 18:17:15,894  INFO Injector:83 org.matsim.core.router.util.TravelTime @com.google.inject.name.Named(value=car)
+2018-06-13 18:17:15,894  INFO Injector:84   --> provider: Key[type=org.matsim.core.trafficmonitoring.ObservedLinkTravelTimes, annotation=[none]]
+2018-06-13 18:17:15,895  INFO Injector:85   --> source: org.matsim.core.trafficmonitoring.TravelTimeCalculatorModule.install(TravelTimeCalculatorModule.java:81)
+2018-06-13 18:17:15,895  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,895  INFO Injector:91 
+2018-06-13 18:17:15,895  INFO Injector:83 org.matsim.core.router.costcalculators.TravelDisutilityFactory @com.google.inject.name.Named(value=car)
+2018-06-13 18:17:15,895  INFO Injector:84   --> provider: of(org.matsim.core.router.costcalculators.RandomizingTimeDistanceTravelDisutilityFactory@6a47b187)
+2018-06-13 18:17:15,896  INFO Injector:85   --> source: org.matsim.core.router.costcalculators.TravelDisutilityModule.install(TravelDisutilityModule.java:34)
+2018-06-13 18:17:15,896  INFO Injector:87   --> scope: eager singleton
+2018-06-13 18:17:15,896  INFO Injector:91 
+2018-06-13 18:17:15,896  INFO Injector:83 org.matsim.core.scoring.ScoringFunctionFactory 
+2018-06-13 18:17:15,896  INFO Injector:84   --> provider: FactoryProxy{key=Key[type=org.matsim.core.scoring.ScoringFunctionFactory, annotation=[none]], provider=com.google.inject.internal.ConstructorBindingImpl$Factory@5495333e}
+2018-06-13 18:17:15,897  INFO Injector:85   --> source: org.matsim.core.scoring.functions.CharyparNagelScoringFunctionModule.install(CharyparNagelScoringFunctionModule.java:32)
+2018-06-13 18:17:15,897  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,897  INFO Injector:91 
+2018-06-13 18:17:15,897  INFO Injector:83 org.matsim.core.scoring.functions.ScoringParametersForPerson 
+2018-06-13 18:17:15,897  INFO Injector:84   --> provider: FactoryProxy{key=Key[type=org.matsim.core.scoring.functions.ScoringParametersForPerson, annotation=[none]], provider=com.google.inject.internal.ConstructorBindingImpl$Factory@616ac46a}
+2018-06-13 18:17:15,898  INFO Injector:85   --> source: org.matsim.core.scoring.functions.CharyparNagelScoringFunctionModule.install(CharyparNagelScoringFunctionModule.java:33)
+2018-06-13 18:17:15,898  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,898  INFO Injector:91 
+2018-06-13 18:17:15,898  INFO Injector:83 org.matsim.core.scoring.ExperiencedPlansService 
+2018-06-13 18:17:15,898  INFO Injector:84   --> provider: FactoryProxy{key=Key[type=org.matsim.core.scoring.ExperiencedPlansService, annotation=[none]], provider=com.google.inject.internal.ConstructorBindingImpl$Factory@5c669da8}[Scopes.SINGLETON]
+2018-06-13 18:17:15,899  INFO Injector:85   --> source: org.matsim.core.scoring.ExperiencedPlansModule.install(ExperiencedPlansModule.java:10)
+2018-06-13 18:17:15,899  INFO Injector:87   --> scope: eager singleton
+2018-06-13 18:17:15,899  INFO Injector:91 
+2018-06-13 18:17:15,899  INFO Injector:83 org.matsim.core.router.MainModeIdentifier 
+2018-06-13 18:17:15,900  INFO Injector:84   --> provider: FactoryProxy{key=Key[type=org.matsim.core.router.MainModeIdentifier, annotation=[none]], provider=com.google.inject.internal.ConstructorBindingImpl$Factory@55cf0d14}
+2018-06-13 18:17:15,900  INFO Injector:85   --> source: org.matsim.core.router.TripRouterModule.install(TripRouterModule.java:44)
+2018-06-13 18:17:15,900  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,900  INFO Injector:91 
+2018-06-13 18:17:15,911  INFO Injector:83 org.matsim.core.router.util.LeastCostPathCalculatorFactory 
+2018-06-13 18:17:15,911  INFO Injector:84   --> provider: FactoryProxy{key=Key[type=org.matsim.core.router.util.LeastCostPathCalculatorFactory, annotation=[none]], provider=com.google.inject.internal.ConstructorBindingImpl$Factory@563e4951[Scopes.SINGLETON]}
+2018-06-13 18:17:15,911  INFO Injector:85   --> source: org.matsim.core.router.LeastCostPathCalculatorModule.install(LeastCostPathCalculatorModule.java:40)
+2018-06-13 18:17:15,912  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,912  INFO Injector:91 
+2018-06-13 18:17:15,912  INFO Injector:83 org.matsim.pt.router.TransitRouter 
+2018-06-13 18:17:15,915  INFO Injector:84   --> provider: Key[type=org.matsim.pt.router.TransitRouterImplFactory, annotation=[none]]
+2018-06-13 18:17:15,915  INFO Injector:85   --> source: org.matsim.pt.router.TransitRouterModule.install(TransitRouterModule.java:34)
+2018-06-13 18:17:15,915  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,915  INFO Injector:91 
+2018-06-13 18:17:15,916  INFO Injector:83 org.matsim.core.router.RoutingModule @com.google.inject.name.Named(value=ride)
+2018-06-13 18:17:15,916  INFO Injector:84   --> provider: org.matsim.core.router.FreespeedFactorRouting@18df8434
+2018-06-13 18:17:15,916  INFO Injector:85   --> source: org.matsim.core.router.TripRouterModule.install(TripRouterModule.java:55)
+2018-06-13 18:17:15,916  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,922  INFO Injector:91 
+2018-06-13 18:17:15,922  INFO Injector:83 org.matsim.core.router.RoutingModule @com.google.inject.name.Named(value=bike)
+2018-06-13 18:17:15,922  INFO Injector:84   --> provider: org.matsim.core.router.BeelineTeleportationRouting@65c7a252
+2018-06-13 18:17:15,923  INFO Injector:85   --> source: org.matsim.core.router.TripRouterModule.install(TripRouterModule.java:58)
+2018-06-13 18:17:15,923  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,923  INFO Injector:91 
+2018-06-13 18:17:15,923  INFO Injector:83 org.matsim.core.router.RoutingModule @com.google.inject.name.Named(value=walk)
+2018-06-13 18:17:15,923  INFO Injector:84   --> provider: org.matsim.core.router.BeelineTeleportationRouting@4d154ccd
+2018-06-13 18:17:15,924  INFO Injector:85   --> source: org.matsim.core.router.TripRouterModule.install(TripRouterModule.java:58)
+2018-06-13 18:17:15,924  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,924  INFO Injector:91 
+2018-06-13 18:17:15,924  INFO Injector:83 org.matsim.core.router.RoutingModule @com.google.inject.name.Named(value=access_walk)
+2018-06-13 18:17:15,925  INFO Injector:84   --> provider: org.matsim.core.router.BeelineTeleportationRouting@229c6181
+2018-06-13 18:17:15,925  INFO Injector:85   --> source: org.matsim.core.router.TripRouterModule.install(TripRouterModule.java:58)
+2018-06-13 18:17:15,925  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,925  INFO Injector:91 
+2018-06-13 18:17:15,925  INFO Injector:83 org.matsim.core.router.RoutingModule @com.google.inject.name.Named(value=egress_walk)
+2018-06-13 18:17:15,925  INFO Injector:84   --> provider: org.matsim.core.router.BeelineTeleportationRouting@4686afc2
+2018-06-13 18:17:15,926  INFO Injector:85   --> source: org.matsim.core.router.TripRouterModule.install(TripRouterModule.java:58)
+2018-06-13 18:17:15,926  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,926  INFO Injector:91 
+2018-06-13 18:17:15,926  INFO Injector:83 org.matsim.core.router.RoutingModule @com.google.inject.name.Named(value=undefined)
+2018-06-13 18:17:15,926  INFO Injector:84   --> provider: org.matsim.core.router.BeelineTeleportationRouting@1e0b4072
+2018-06-13 18:17:15,927  INFO Injector:85   --> source: org.matsim.core.router.TripRouterModule.install(TripRouterModule.java:58)
+2018-06-13 18:17:15,927  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,927  INFO Injector:91 
+2018-06-13 18:17:15,927  INFO Injector:83 org.matsim.core.router.RoutingModule @com.google.inject.name.Named(value=car)
+2018-06-13 18:17:15,927  INFO Injector:84   --> provider: org.matsim.core.router.NetworkRouting@791f145a
+2018-06-13 18:17:15,928  INFO Injector:85   --> source: org.matsim.core.router.TripRouterModule.install(TripRouterModule.java:66)
+2018-06-13 18:17:15,928  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,928  INFO Injector:91 
+2018-06-13 18:17:15,928  INFO Injector:83 org.matsim.core.router.RoutingModule @com.google.inject.name.Named(value=pt)
+2018-06-13 18:17:15,928  INFO Injector:84   --> provider: Key[type=org.matsim.core.router.Transit, annotation=[none]]
+2018-06-13 18:17:15,928  INFO Injector:85   --> source: org.matsim.core.router.TripRouterModule.install(TripRouterModule.java:71)
+2018-06-13 18:17:15,929  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,929  INFO Injector:91 
+2018-06-13 18:17:15,936  INFO Injector:83 org.matsim.core.router.RoutingModule @com.google.inject.name.Named(value=transit_walk)
+2018-06-13 18:17:15,937  INFO Injector:84   --> provider: FactoryProxy{key=Key[type=org.matsim.core.router.RoutingModule, annotation=@com.google.inject.name.Named(value=transit_walk)], provider=org.matsim.core.router.BeelineTeleportationRouting@4d154ccd}
+2018-06-13 18:17:15,938  INFO Injector:85   --> source: org.matsim.core.router.TripRouterModule.install(TripRouterModule.java:73)
+2018-06-13 18:17:15,938  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,938  INFO Injector:91 
+2018-06-13 18:17:15,939  INFO Injector:83 org.matsim.core.replanning.selectors.PlanSelector<org.matsim.api.core.v01.population.Plan, org.matsim.api.core.v01.population.Person> 
+2018-06-13 18:17:15,939  INFO Injector:84   --> provider: FactoryProxy{key=Key[type=org.matsim.core.replanning.selectors.PlanSelector<org.matsim.api.core.v01.population.Plan, org.matsim.api.core.v01.population.Person>, annotation=[none]], provider=com.google.inject.internal.ConstructorBindingImpl$Factory@147a5d08}
+2018-06-13 18:17:15,939  INFO Injector:85   --> source: org.matsim.core.replanning.strategies.DefaultPlanStrategiesModule.install(DefaultPlanStrategiesModule.java:49)
+2018-06-13 18:17:15,939  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,940  INFO Injector:91 
+2018-06-13 18:17:15,940  INFO Injector:83 org.matsim.core.replanning.ReplanningContext 
+2018-06-13 18:17:15,940  INFO Injector:84   --> provider: FactoryProxy{key=Key[type=org.matsim.core.replanning.ReplanningContext, annotation=[none]], provider=com.google.inject.internal.ConstructorBindingImpl$Factory@11f0a5a1[Scopes.SINGLETON]}[Scopes.SINGLETON]
+2018-06-13 18:17:15,940  INFO Injector:85   --> source: org.matsim.core.replanning.StrategyManagerModule.install(StrategyManagerModule.java:48)
+2018-06-13 18:17:15,941  INFO Injector:87   --> scope: eager singleton
+2018-06-13 18:17:15,941  INFO Injector:91 
+2018-06-13 18:17:15,941  INFO Injector:83 org.matsim.core.controler.listener.ControlerListener @com.google.inject.multibindings.Element(setName=,uniqueId=29, type=MULTIBINDER, keyType=)
+2018-06-13 18:17:15,941  INFO Injector:84   --> provider: FactoryProxy{key=Key[type=org.matsim.core.controler.listener.ControlerListener, annotation=@com.google.inject.multibindings.Element(setName=,uniqueId=29, type=MULTIBINDER, keyType=)], provider=com.google.inject.internal.ConstructorBindingImpl$Factory@5e3d57c7[Scopes.SINGLETON]}
+2018-06-13 18:17:15,941  INFO Injector:85   --> source: org.matsim.analysis.LinkStatsModule.install(LinkStatsModule.java:47)
+2018-06-13 18:17:15,941  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,942  INFO Injector:91 
+2018-06-13 18:17:15,943  INFO Injector:83 org.matsim.core.controler.listener.ControlerListener @com.google.inject.multibindings.Element(setName=,uniqueId=30, type=MULTIBINDER, keyType=)
+2018-06-13 18:17:15,943  INFO Injector:84   --> provider: FactoryProxy{key=Key[type=org.matsim.core.controler.listener.ControlerListener, annotation=@com.google.inject.multibindings.Element(setName=,uniqueId=30, type=MULTIBINDER, keyType=)], provider=com.google.inject.internal.ConstructorBindingImpl$Factory@18e36d14}
+2018-06-13 18:17:15,943  INFO Injector:85   --> source: org.matsim.analysis.LegHistogramModule.install(LegHistogramModule.java:31)
+2018-06-13 18:17:15,943  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,944  INFO Injector:91 
+2018-06-13 18:17:15,944  INFO Injector:83 org.matsim.core.controler.listener.ControlerListener @com.google.inject.multibindings.Element(setName=,uniqueId=31, type=MULTIBINDER, keyType=)
+2018-06-13 18:17:15,944  INFO Injector:84   --> provider: FactoryProxy{key=Key[type=org.matsim.core.controler.listener.ControlerListener, annotation=@com.google.inject.multibindings.Element(setName=,uniqueId=31, type=MULTIBINDER, keyType=)], provider=com.google.inject.internal.ConstructorBindingImpl$Factory@4278284b}
+2018-06-13 18:17:15,944  INFO Injector:85   --> source: org.matsim.analysis.LegTimesModule.install(LegTimesModule.java:32)
+2018-06-13 18:17:15,944  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,944  INFO Injector:91 
+2018-06-13 18:17:15,944  INFO Injector:83 org.matsim.core.controler.listener.ControlerListener @com.google.inject.multibindings.Element(setName=,uniqueId=32, type=MULTIBINDER, keyType=)
+2018-06-13 18:17:15,945  INFO Injector:84   --> provider: FactoryProxy{key=Key[type=org.matsim.core.controler.listener.ControlerListener, annotation=@com.google.inject.multibindings.Element(setName=,uniqueId=32, type=MULTIBINDER, keyType=)], provider=com.google.inject.internal.ConstructorBindingImpl$Factory@6853425f}
+2018-06-13 18:17:15,945  INFO Injector:85   --> source: org.matsim.analysis.TravelDistanceStatsModule.install(TravelDistanceStatsModule.java:11)
+2018-06-13 18:17:15,945  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,945  INFO Injector:91 
+2018-06-13 18:17:15,945  INFO Injector:83 org.matsim.core.controler.listener.ControlerListener @com.google.inject.multibindings.Element(setName=,uniqueId=33, type=MULTIBINDER, keyType=)
+2018-06-13 18:17:15,946  INFO Injector:84   --> provider: FactoryProxy{key=Key[type=org.matsim.core.controler.listener.ControlerListener, annotation=@com.google.inject.multibindings.Element(setName=,uniqueId=33, type=MULTIBINDER, keyType=)], provider=com.google.inject.internal.ConstructorBindingImpl$Factory@48d61b48[Scopes.SINGLETON]}
+2018-06-13 18:17:15,946  INFO Injector:85   --> source: org.matsim.analysis.ScoreStatsModule.install(ScoreStatsModule.java:32)
+2018-06-13 18:17:15,946  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,946  INFO Injector:91 
+2018-06-13 18:17:15,946  INFO Injector:83 org.matsim.analysis.ScoreStats 
+2018-06-13 18:17:15,947  INFO Injector:84   --> provider: FactoryProxy{key=Key[type=org.matsim.analysis.ScoreStats, annotation=[none]], provider=com.google.inject.internal.ConstructorBindingImpl$Factory@48d61b48[Scopes.SINGLETON]}
+2018-06-13 18:17:15,947  INFO Injector:85   --> source: org.matsim.analysis.ScoreStatsModule.install(ScoreStatsModule.java:33)
+2018-06-13 18:17:15,947  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,947  INFO Injector:91 
+2018-06-13 18:17:15,947  INFO Injector:83 org.matsim.core.controler.listener.ControlerListener @com.google.inject.multibindings.Element(setName=,uniqueId=34, type=MULTIBINDER, keyType=)
+2018-06-13 18:17:15,948  INFO Injector:84   --> provider: FactoryProxy{key=Key[type=org.matsim.core.controler.listener.ControlerListener, annotation=@com.google.inject.multibindings.Element(setName=,uniqueId=34, type=MULTIBINDER, keyType=)], provider=com.google.inject.internal.ConstructorBindingImpl$Factory@71e693fa[Scopes.SINGLETON]}
+2018-06-13 18:17:15,948  INFO Injector:85   --> source: org.matsim.analysis.ModeStatsModule.install(ModeStatsModule.java:32)
+2018-06-13 18:17:15,948  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,948  INFO Injector:91 
+2018-06-13 18:17:15,948  INFO Injector:83 org.matsim.core.controler.listener.ControlerListener @com.google.inject.multibindings.Element(setName=,uniqueId=35, type=MULTIBINDER, keyType=)
+2018-06-13 18:17:15,948  INFO Injector:84   --> provider: FactoryProxy{key=Key[type=org.matsim.core.controler.listener.ControlerListener, annotation=@com.google.inject.multibindings.Element(setName=,uniqueId=35, type=MULTIBINDER, keyType=)], provider=com.google.inject.internal.ConstructorBindingImpl$Factory@44c73c26}
+2018-06-13 18:17:15,956  INFO Injector:85   --> source: org.matsim.counts.CountsModule.install(CountsModule.java:42)
+2018-06-13 18:17:15,956  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,956  INFO Injector:91 
+2018-06-13 18:17:15,956  INFO Injector:83 org.matsim.counts.Counts<org.matsim.api.core.v01.network.Link> 
+2018-06-13 18:17:15,958  INFO Injector:84   --> provider: @Provides org.matsim.counts.CountsModule.provideLinkCounts(CountsModule.java:63)[Scopes.SINGLETON]
+2018-06-13 18:17:15,958  INFO Injector:85   --> source: org.matsim.counts.Counts org.matsim.counts.CountsModule.provideLinkCounts(org.matsim.api.core.v01.Scenario,org.matsim.core.config.groups.CountsConfigGroup)
+2018-06-13 18:17:15,958  INFO Injector:87   --> scope: Scopes.SINGLETON
+2018-06-13 18:17:15,958  INFO Injector:91 
+2018-06-13 18:17:15,959  INFO Injector:83 org.matsim.core.controler.listener.ControlerListener @com.google.inject.multibindings.Element(setName=,uniqueId=36, type=MULTIBINDER, keyType=)
+2018-06-13 18:17:15,959  INFO Injector:84   --> provider: FactoryProxy{key=Key[type=org.matsim.core.controler.listener.ControlerListener, annotation=@com.google.inject.multibindings.Element(setName=,uniqueId=36, type=MULTIBINDER, keyType=)], provider=com.google.inject.internal.ConstructorBindingImpl$Factory@488d1cd7}
+2018-06-13 18:17:15,959  INFO Injector:85   --> source: org.matsim.core.population.VspPlansCleanerModule.install(VspPlansCleanerModule.java:34)
+2018-06-13 18:17:15,959  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,959  INFO Injector:91 
+2018-06-13 18:17:15,960  INFO Injector:83 org.matsim.core.mobsim.framework.listeners.MobsimListener @com.google.inject.multibindings.Element(setName=,uniqueId=37, type=MULTIBINDER, keyType=)
+2018-06-13 18:17:15,960  INFO Injector:84   --> provider: Key[type=org.matsim.vis.snapshotwriters.SnapshotWritersModule$SnapshotWriterManagerProvider, annotation=[none]]
+2018-06-13 18:17:15,960  INFO Injector:85   --> source: org.matsim.vis.snapshotwriters.SnapshotWritersModule.install(SnapshotWritersModule.java:45)
+2018-06-13 18:17:15,960  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,960  INFO Injector:91 
+2018-06-13 18:17:15,961  INFO Injector:83 org.matsim.core.router.RoutingModule @com.google.inject.multibindings.Element(setName=,uniqueId=38, type=MAPBINDER, keyType=java.lang.String)
+2018-06-13 18:17:15,961  INFO Injector:84   --> provider: FactoryProxy{key=Key[type=org.matsim.core.router.RoutingModule, annotation=@com.google.inject.multibindings.Element(setName=,uniqueId=38, type=MAPBINDER, keyType=java.lang.String)], provider=org.matsim.core.router.BeelineTeleportationRouting@4686afc2}
+2018-06-13 18:17:15,961  INFO Injector:85   --> source: org.matsim.core.controler.Injector$3.configure(Injector.java:123)
+2018-06-13 18:17:15,961  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,962  INFO Injector:91 
+2018-06-13 18:17:15,962  INFO Injector:83 org.matsim.core.router.RoutingModule @com.google.inject.multibindings.Element(setName=,uniqueId=40, type=MAPBINDER, keyType=java.lang.String)
+2018-06-13 18:17:15,962  INFO Injector:84   --> provider: FactoryProxy{key=Key[type=org.matsim.core.router.RoutingModule, annotation=@com.google.inject.multibindings.Element(setName=,uniqueId=40, type=MAPBINDER, keyType=java.lang.String)], provider=Key[type=org.matsim.core.router.Transit, annotation=[none]]}
+2018-06-13 18:17:15,962  INFO Injector:85   --> source: org.matsim.core.controler.Injector$3.configure(Injector.java:123)
+2018-06-13 18:17:15,964  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,964  INFO Injector:91 
+2018-06-13 18:17:15,964  INFO Injector:83 org.matsim.core.router.RoutingModule @com.google.inject.multibindings.Element(setName=,uniqueId=42, type=MAPBINDER, keyType=java.lang.String)
+2018-06-13 18:17:15,964  INFO Injector:84   --> provider: FactoryProxy{key=Key[type=org.matsim.core.router.RoutingModule, annotation=@com.google.inject.multibindings.Element(setName=,uniqueId=42, type=MAPBINDER, keyType=java.lang.String)], provider=org.matsim.core.router.NetworkRouting@791f145a}
+2018-06-13 18:17:15,965  INFO Injector:85   --> source: org.matsim.core.controler.Injector$3.configure(Injector.java:123)
+2018-06-13 18:17:15,971  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,971  INFO Injector:91 
+2018-06-13 18:17:15,971  INFO Injector:83 org.matsim.core.router.RoutingModule @com.google.inject.multibindings.Element(setName=,uniqueId=44, type=MAPBINDER, keyType=java.lang.String)
+2018-06-13 18:17:15,973  INFO Injector:84   --> provider: FactoryProxy{key=Key[type=org.matsim.core.router.RoutingModule, annotation=@com.google.inject.multibindings.Element(setName=,uniqueId=44, type=MAPBINDER, keyType=java.lang.String)], provider=FactoryProxy{key=Key[type=org.matsim.core.router.RoutingModule, annotation=@com.google.inject.name.Named(value=transit_walk)], provider=org.matsim.core.router.BeelineTeleportationRouting@4d154ccd}}
+2018-06-13 18:17:15,973  INFO Injector:85   --> source: org.matsim.core.controler.Injector$3.configure(Injector.java:123)
+2018-06-13 18:17:15,973  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,973  INFO Injector:91 
+2018-06-13 18:17:15,979  INFO Injector:83 org.matsim.core.router.RoutingModule @com.google.inject.multibindings.Element(setName=,uniqueId=46, type=MAPBINDER, keyType=java.lang.String)
+2018-06-13 18:17:15,979  INFO Injector:84   --> provider: FactoryProxy{key=Key[type=org.matsim.core.router.RoutingModule, annotation=@com.google.inject.multibindings.Element(setName=,uniqueId=46, type=MAPBINDER, keyType=java.lang.String)], provider=org.matsim.core.router.BeelineTeleportationRouting@229c6181}
+2018-06-13 18:17:15,979  INFO Injector:85   --> source: org.matsim.core.controler.Injector$3.configure(Injector.java:123)
+2018-06-13 18:17:15,980  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,981  INFO Injector:91 
+2018-06-13 18:17:15,981  INFO Injector:83 org.matsim.core.router.RoutingModule @com.google.inject.multibindings.Element(setName=,uniqueId=48, type=MAPBINDER, keyType=java.lang.String)
+2018-06-13 18:17:15,982  INFO Injector:84   --> provider: FactoryProxy{key=Key[type=org.matsim.core.router.RoutingModule, annotation=@com.google.inject.multibindings.Element(setName=,uniqueId=48, type=MAPBINDER, keyType=java.lang.String)], provider=org.matsim.core.router.FreespeedFactorRouting@18df8434}
+2018-06-13 18:17:15,982  INFO Injector:85   --> source: org.matsim.core.controler.Injector$3.configure(Injector.java:123)
+2018-06-13 18:17:15,982  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,982  INFO Injector:91 
+2018-06-13 18:17:15,982  INFO Injector:83 org.matsim.core.router.RoutingModule @com.google.inject.multibindings.Element(setName=,uniqueId=50, type=MAPBINDER, keyType=java.lang.String)
+2018-06-13 18:17:15,983  INFO Injector:84   --> provider: FactoryProxy{key=Key[type=org.matsim.core.router.RoutingModule, annotation=@com.google.inject.multibindings.Element(setName=,uniqueId=50, type=MAPBINDER, keyType=java.lang.String)], provider=org.matsim.core.router.BeelineTeleportationRouting@4d154ccd}
+2018-06-13 18:17:15,983  INFO Injector:85   --> source: org.matsim.core.controler.Injector$3.configure(Injector.java:123)
+2018-06-13 18:17:15,984  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,985  INFO Injector:91 
+2018-06-13 18:17:15,985  INFO Injector:83 org.matsim.core.router.RoutingModule @com.google.inject.multibindings.Element(setName=,uniqueId=52, type=MAPBINDER, keyType=java.lang.String)
+2018-06-13 18:17:15,986  INFO Injector:84   --> provider: FactoryProxy{key=Key[type=org.matsim.core.router.RoutingModule, annotation=@com.google.inject.multibindings.Element(setName=,uniqueId=52, type=MAPBINDER, keyType=java.lang.String)], provider=org.matsim.core.router.BeelineTeleportationRouting@65c7a252}
+2018-06-13 18:17:15,986  INFO Injector:85   --> source: org.matsim.core.controler.Injector$3.configure(Injector.java:123)
+2018-06-13 18:17:15,986  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,986  INFO Injector:91 
+2018-06-13 18:17:15,986  INFO Injector:83 org.matsim.core.router.RoutingModule @com.google.inject.multibindings.Element(setName=,uniqueId=54, type=MAPBINDER, keyType=java.lang.String)
+2018-06-13 18:17:15,986  INFO Injector:84   --> provider: FactoryProxy{key=Key[type=org.matsim.core.router.RoutingModule, annotation=@com.google.inject.multibindings.Element(setName=,uniqueId=54, type=MAPBINDER, keyType=java.lang.String)], provider=org.matsim.core.router.BeelineTeleportationRouting@1e0b4072}
+2018-06-13 18:17:15,986  INFO Injector:85   --> source: org.matsim.core.controler.Injector$3.configure(Injector.java:123)
+2018-06-13 18:17:15,986  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,986  INFO Injector:91 
+2018-06-13 18:17:15,986  INFO Injector:83 org.matsim.core.router.util.TravelTime @com.google.inject.multibindings.Element(setName=,uniqueId=56, type=MAPBINDER, keyType=java.lang.String)
+2018-06-13 18:17:15,986  INFO Injector:84   --> provider: FactoryProxy{key=Key[type=org.matsim.core.router.util.TravelTime, annotation=@com.google.inject.multibindings.Element(setName=,uniqueId=56, type=MAPBINDER, keyType=java.lang.String)], provider=Key[type=org.matsim.core.trafficmonitoring.ObservedLinkTravelTimes, annotation=[none]]}
+2018-06-13 18:17:15,986  INFO Injector:85   --> source: org.matsim.core.controler.Injector$3.configure(Injector.java:123)
+2018-06-13 18:17:15,986  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:15,986  INFO Injector:91 
+2018-06-13 18:17:15,986  INFO Injector:83 org.matsim.core.router.costcalculators.TravelDisutilityFactory @com.google.inject.multibindings.Element(setName=,uniqueId=58, type=MAPBINDER, keyType=java.lang.String)
+2018-06-13 18:17:15,986  INFO Injector:84   --> provider: FactoryProxy{key=Key[type=org.matsim.core.router.costcalculators.TravelDisutilityFactory, annotation=@com.google.inject.multibindings.Element(setName=,uniqueId=58, type=MAPBINDER, keyType=java.lang.String)], provider=ConstantFactory{value=org.matsim.core.router.costcalculators.RandomizingTimeDistanceTravelDisutilityFactory@6a47b187}[Scopes.SINGLETON]}
+2018-06-13 18:17:15,986  INFO Injector:85   --> source: org.matsim.core.controler.Injector$3.configure(Injector.java:123)
+2018-06-13 18:17:15,986  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:16,002  INFO Injector:91 
+2018-06-13 18:17:16,002  INFO Injector:83 org.matsim.core.controler.ControlerListenerManagerImpl 
+2018-06-13 18:17:16,003  INFO Injector:84   --> provider: com.google.inject.internal.ConstructorBindingImpl$Factory@3b79fd76[Scopes.SINGLETON]
+2018-06-13 18:17:16,003  INFO Injector:85   --> source: org.matsim.core.controler.NewControlerModule.install(NewControlerModule.java:9)
+2018-06-13 18:17:16,004  INFO Injector:87   --> scope: eager singleton
+2018-06-13 18:17:16,004  INFO Injector:91 
+2018-06-13 18:17:16,004  INFO Injector:83 org.matsim.analysis.IterationStopWatch 
+2018-06-13 18:17:16,004  INFO Injector:84   --> provider: com.google.inject.internal.ConstructorBindingImpl$Factory@600b9d27[Scopes.SINGLETON]
+2018-06-13 18:17:16,005  INFO Injector:85   --> source: org.matsim.core.controler.NewControlerModule.install(NewControlerModule.java:12)
+2018-06-13 18:17:16,005  INFO Injector:87   --> scope: eager singleton
+2018-06-13 18:17:16,005  INFO Injector:91 
+2018-06-13 18:17:16,005  INFO Injector:83 org.matsim.core.controler.OutputDirectoryHierarchy 
+2018-06-13 18:17:16,005  INFO Injector:84   --> provider: com.google.inject.internal.ConstructorBindingImpl$Factory@50de186c[Scopes.SINGLETON]
+2018-06-13 18:17:16,006  INFO Injector:85   --> source: org.matsim.core.controler.NewControlerModule.install(NewControlerModule.java:13)
+2018-06-13 18:17:16,006  INFO Injector:87   --> scope: eager singleton
+2018-06-13 18:17:16,006  INFO Injector:91 
+2018-06-13 18:17:16,006  INFO Injector:83 org.matsim.core.scoring.ScoringFunctionsForPopulation 
+2018-06-13 18:17:16,006  INFO Injector:84   --> provider: com.google.inject.internal.ConstructorBindingImpl$Factory@36a5cabc[Scopes.SINGLETON]
+2018-06-13 18:17:16,007  INFO Injector:85   --> source: org.matsim.core.scoring.PlansScoringModule.install(PlansScoringModule.java:10)
+2018-06-13 18:17:16,008  INFO Injector:87   --> scope: eager singleton
+2018-06-13 18:17:16,008  INFO Injector:91 
+2018-06-13 18:17:16,008  INFO Injector:83 org.matsim.core.events.EventsManagerModule$EventHandlerRegistrator 
+2018-06-13 18:17:16,008  INFO Injector:84   --> provider: com.google.inject.internal.ConstructorBindingImpl$Factory@35645047[Scopes.SINGLETON]
+2018-06-13 18:17:16,010  INFO Injector:85   --> source: org.matsim.core.events.EventsManagerModule.install(EventsManagerModule.java:25)
+2018-06-13 18:17:16,010  INFO Injector:87   --> scope: eager singleton
+2018-06-13 18:17:16,014  INFO Injector:91 
+2018-06-13 18:17:16,014  INFO Injector:83 org.matsim.core.trafficmonitoring.TravelTimeCalculator 
+2018-06-13 18:17:16,014  INFO Injector:84   --> provider: com.google.inject.internal.ConstructorBindingImpl$Factory@16eccb2e[Scopes.SINGLETON]
+2018-06-13 18:17:16,015  INFO Injector:85   --> source: org.matsim.core.trafficmonitoring.TravelTimeCalculatorModule.install(TravelTimeCalculatorModule.java:76)
+2018-06-13 18:17:16,015  INFO Injector:87   --> scope: Scopes.SINGLETON
+2018-06-13 18:17:16,015  INFO Injector:91 
+2018-06-13 18:17:16,015  INFO Injector:83 org.matsim.core.scoring.EventsToActivities 
+2018-06-13 18:17:16,015  INFO Injector:84   --> provider: com.google.inject.internal.ConstructorBindingImpl$Factory@3697186[Scopes.SINGLETON]
+2018-06-13 18:17:16,015  INFO Injector:85   --> source: org.matsim.core.scoring.ExperiencedPlanElementsModule.install(ExperiencedPlanElementsModule.java:12)
+2018-06-13 18:17:16,016  INFO Injector:87   --> scope: eager singleton
+2018-06-13 18:17:16,017  INFO Injector:91 
+2018-06-13 18:17:16,017  INFO Injector:83 org.matsim.core.scoring.EventsToLegs 
+2018-06-13 18:17:16,017  INFO Injector:84   --> provider: com.google.inject.internal.ConstructorBindingImpl$Factory@2e48362c[Scopes.SINGLETON]
+2018-06-13 18:17:16,017  INFO Injector:85   --> source: org.matsim.core.scoring.ExperiencedPlanElementsModule.install(ExperiencedPlanElementsModule.java:13)
+2018-06-13 18:17:16,017  INFO Injector:87   --> scope: eager singleton
+2018-06-13 18:17:16,018  INFO Injector:91 
+2018-06-13 18:17:16,018  INFO Injector:83 org.matsim.core.router.TripRouter 
+2018-06-13 18:17:16,018  INFO Injector:84   --> provider: com.google.inject.internal.ConstructorBindingImpl$Factory@413f69cc
+2018-06-13 18:17:16,018  INFO Injector:85   --> source: org.matsim.core.router.TripRouterModule.install(TripRouterModule.java:43)
+2018-06-13 18:17:16,018  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:16,018  INFO Injector:91 
+2018-06-13 18:17:16,018  INFO Injector:83 org.matsim.core.router.SingleModeNetworksCache 
+2018-06-13 18:17:16,019  INFO Injector:84   --> provider: com.google.inject.internal.ConstructorBindingImpl$Factory@c7ba306[Scopes.SINGLETON]
+2018-06-13 18:17:16,019  INFO Injector:85   --> source: org.matsim.core.router.TripRouterModule.install(TripRouterModule.java:47)
+2018-06-13 18:17:16,020  INFO Injector:87   --> scope: eager singleton
+2018-06-13 18:17:16,020  INFO Injector:91 
+2018-06-13 18:17:16,020  INFO Injector:83 org.matsim.core.replanning.StrategyManager 
+2018-06-13 18:17:16,020  INFO Injector:84   --> provider: com.google.inject.internal.ConstructorBindingImpl$Factory@327bcebd[Scopes.SINGLETON]
+2018-06-13 18:17:16,020  INFO Injector:85   --> source: org.matsim.core.replanning.StrategyManagerModule.install(StrategyManagerModule.java:47)
+2018-06-13 18:17:16,021  INFO Injector:87   --> scope: Scopes.SINGLETON
+2018-06-13 18:17:16,021  INFO Injector:91 
+2018-06-13 18:17:16,021  INFO Injector:83 org.matsim.analysis.CalcLinkStats 
+2018-06-13 18:17:16,021  INFO Injector:84   --> provider: com.google.inject.internal.ConstructorBindingImpl$Factory@1fb669c3[Scopes.SINGLETON]
+2018-06-13 18:17:16,021  INFO Injector:85   --> source: org.matsim.analysis.LinkStatsModule.install(LinkStatsModule.java:37)
+2018-06-13 18:17:16,021  INFO Injector:87   --> scope: eager singleton
+2018-06-13 18:17:16,021  INFO Injector:91 
+2018-06-13 18:17:16,022  INFO Injector:83 org.matsim.analysis.LinkStatsControlerListener 
+2018-06-13 18:17:16,022  INFO Injector:84   --> provider: com.google.inject.internal.ConstructorBindingImpl$Factory@5e3d57c7[Scopes.SINGLETON]
+2018-06-13 18:17:16,022  INFO Injector:85   --> source: org.matsim.analysis.LinkStatsModule.install(LinkStatsModule.java:46)
+2018-06-13 18:17:16,022  INFO Injector:87   --> scope: eager singleton
+2018-06-13 18:17:16,022  INFO Injector:91 
+2018-06-13 18:17:16,022  INFO Injector:83 org.matsim.analysis.VolumesAnalyzer 
+2018-06-13 18:17:16,022  INFO Injector:84   --> provider: com.google.inject.internal.ConstructorBindingImpl$Factory@68702e03[Scopes.SINGLETON]
+2018-06-13 18:17:16,023  INFO Injector:85   --> source: org.matsim.analysis.VolumesAnalyzerModule.install(VolumesAnalyzerModule.java:31)
+2018-06-13 18:17:16,023  INFO Injector:87   --> scope: eager singleton
+2018-06-13 18:17:16,023  INFO Injector:91 
+2018-06-13 18:17:16,023  INFO Injector:83 org.matsim.analysis.LegHistogram 
+2018-06-13 18:17:16,023  INFO Injector:84   --> provider: com.google.inject.internal.ConstructorBindingImpl$Factory@21ba0741
+2018-06-13 18:17:16,024  INFO Injector:85   --> source: org.matsim.analysis.LegHistogramModule.install(LegHistogramModule.java:30)
+2018-06-13 18:17:16,024  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:16,024  INFO Injector:91 
+2018-06-13 18:17:16,024  INFO Injector:83 org.matsim.analysis.CalcLegTimes 
+2018-06-13 18:17:16,024  INFO Injector:84   --> provider: com.google.inject.internal.ConstructorBindingImpl$Factory@1fa1cab1[Scopes.SINGLETON]
+2018-06-13 18:17:16,024  INFO Injector:85   --> source: org.matsim.analysis.LegTimesModule.install(LegTimesModule.java:31)
+2018-06-13 18:17:16,024  INFO Injector:87   --> scope: Scopes.SINGLETON
+2018-06-13 18:17:16,024  INFO Injector:91 
+2018-06-13 18:17:16,024  INFO Injector:83 org.matsim.analysis.TravelDistanceStats 
+2018-06-13 18:17:16,025  INFO Injector:84   --> provider: com.google.inject.internal.ConstructorBindingImpl$Factory@5b6ec132[Scopes.SINGLETON]
+2018-06-13 18:17:16,025  INFO Injector:85   --> source: org.matsim.analysis.TravelDistanceStatsModule.install(TravelDistanceStatsModule.java:10)
+2018-06-13 18:17:16,025  INFO Injector:87   --> scope: eager singleton
+2018-06-13 18:17:16,025  INFO Injector:91 
+2018-06-13 18:17:16,025  INFO Injector:83 org.matsim.analysis.ScoreStatsControlerListener 
+2018-06-13 18:17:16,026  INFO Injector:84   --> provider: com.google.inject.internal.ConstructorBindingImpl$Factory@48d61b48[Scopes.SINGLETON]
+2018-06-13 18:17:16,026  INFO Injector:85   --> source: org.matsim.analysis.ScoreStatsModule.install(ScoreStatsModule.java:31)
+2018-06-13 18:17:16,026  INFO Injector:87   --> scope: Scopes.SINGLETON
+2018-06-13 18:17:16,026  INFO Injector:91 
+2018-06-13 18:17:16,026  INFO Injector:83 org.matsim.analysis.ModeStatsControlerListener 
+2018-06-13 18:17:16,027  INFO Injector:84   --> provider: com.google.inject.internal.ConstructorBindingImpl$Factory@71e693fa[Scopes.SINGLETON]
+2018-06-13 18:17:16,027  INFO Injector:85   --> source: org.matsim.analysis.ModeStatsModule.install(ModeStatsModule.java:31)
+2018-06-13 18:17:16,027  INFO Injector:87   --> scope: Scopes.SINGLETON
+2018-06-13 18:17:16,027  INFO Injector:91 
+2018-06-13 18:17:16,027  INFO Injector:83 org.matsim.counts.CountsModule$CountsInitializer 
+2018-06-13 18:17:16,027  INFO Injector:84   --> provider: com.google.inject.internal.ConstructorBindingImpl$Factory@60129b9a[Scopes.SINGLETON]
+2018-06-13 18:17:16,027  INFO Injector:85   --> source: org.matsim.counts.CountsModule.install(CountsModule.java:43)
+2018-06-13 18:17:16,028  INFO Injector:87   --> scope: eager singleton
+2018-06-13 18:17:16,028  INFO Injector:91 
+2018-06-13 18:17:16,046  INFO ControlerListenerManagerImpl:107 calling notifyStartup on org.matsim.counts.CountsControlerListener
+2018-06-13 18:17:16,046  INFO ControlerListenerManagerImpl:107 calling notifyStartup on org.matsim.analysis.ModeStatsControlerListener
+2018-06-13 18:17:16,055  INFO TransitRouterNetwork:407 start creating transit network
+2018-06-13 18:17:16,056  INFO Counter:61  node #1
+2018-06-13 18:17:16,057  INFO Counter:61  node #2
+2018-06-13 18:17:16,058  INFO Counter:61  link #1
+2018-06-13 18:17:16,059  INFO Counter:61  link #2
+2018-06-13 18:17:16,059  INFO Counter:61  node #4
+2018-06-13 18:17:16,059  INFO Counter:61  link #4
+2018-06-13 18:17:16,062  INFO TransitRouterNetwork:433 add transfer links
+2018-06-13 18:17:16,062  INFO TransitRouterNetwork:449 0 transfer links to be added.
+2018-06-13 18:17:16,062  INFO TransitRouterNetwork:455 transit router network statistics:
+2018-06-13 18:17:16,066  INFO TransitRouterNetwork:456  # nodes: 5
+2018-06-13 18:17:16,066  INFO TransitRouterNetwork:457  # links total:     4
+2018-06-13 18:17:16,067  INFO TransitRouterNetwork:458  # transfer links:  0
+2018-06-13 18:17:16,069  INFO NetworkImpl:156  node # 1
+2018-06-13 18:17:16,069  INFO NetworkImpl:156  node # 2
+2018-06-13 18:17:16,069  INFO NetworkImpl:156  node # 4
+2018-06-13 18:17:16,076  INFO ControlerListenerManagerImpl:107 calling notifyStartup on org.matsim.analysis.ScoreStatsControlerListener
+2018-06-13 18:17:16,076  INFO ControlerListenerManagerImpl:110 all ControlerStartupListeners called.
+2018-06-13 18:17:16,076  INFO ControlerUtils:58 config dump before iterations start
+2018-06-13 18:17:16,076  INFO Config:563 setting context to [file:/C:/devsbb/ethz/matsim-sbb-extensions/]
+2018-06-13 18:17:16,138  INFO ControlerUtils:62 
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE config SYSTEM "http://www.matsim.org/files/dtd/config_v2.dtd">
+<config>
+
+<!-- ====================================================================== -->
+
+	<module name="JDEQSim" >
+		<param name="carSize" value="7.5" />
+		<param name="endTime" value="undefined" />
+		<param name="flowCapacityFactor" value="1.0" />
+		<param name="gapTravelSpeed" value="15.0" />
+		<param name="minimumInFlowCapacity" value="1800.0" />
+		<param name="squeezeTime" value="1800.0" />
+		<param name="storageCapacityFactor" value="1.0" />
+	</module>
+
+<!-- ====================================================================== -->
+
+	<module name="SBBPt" >
+
+		<!-- Specifies whether the deterministic simulation should create linkEnter- and linkLeave-events, useful for visualization purposes. Defaults to false. -->
+		<param name="createLinkEvents" value="false" />
+
+		<!-- Leg modes used by the created transit drivers that should be simulated strictly according to the schedule. -->
+		<param name="deterministicServiceModes" value="train" />
+	</module>
+
+<!-- ====================================================================== -->
+
+	<module name="TimeAllocationMutator" >
+
+		<!-- Default:true; Defines whether time mutation changes an activity's duration. -->
+		<param name="mutationAffectsDuration" value="true" />
+
+		<!-- Default:1800.0; Defines how many seconds a time mutation can maximally shift a time. -->
+		<param name="mutationRange" value="1800.0" />
+
+		<!-- false; Use individual settings for each subpopulation. If enabled but no settings are found, regular settings are uses as fallback. -->
+		<param name="useIndividualSettingsForSubpopulations" value="false" />
+	</module>
+
+<!-- ====================================================================== -->
+
+<!-- ====================================================================== -->
+
+	<module name="changeMode" >
+		<param name="ignoreCarAvailability" value="true" />
+		<param name="modes" value="car,pt" />
+	</module>
+
+<!-- ====================================================================== -->
+
+	<module name="controler" >
+
+		<!-- Sets whether graphs showing some analyses should automatically be generated during the simulation. The generation of graphs usually takes a small amount of time that does not have any weight in big simulations, but add a significant overhead in smaller runs or in test cases where the graphical output is not even requested. -->
+		<param name="createGraphs" value="true" />
+
+		<!-- true if at the end of a run, plans, network, config etc should be dumped to a file -->
+		<param name="dumpDataAtEnd" value="true" />
+
+		<!-- Default=false. If enabled, the router takes travel times needed for turning moves into account. Cannot be used if the (Fast)AStarLandmarks routing or TravelTimeCalculator.separateModes is enabled. -->
+		<param name="enableLinkToLinkRouting" value="false" />
+
+		<!-- Default=xml; Specifies the file format for writing events. Currently supported: xml.
+		Multiple values can be specified separated by commas (','). -->
+		<param name="eventsFileFormat" value="xml" />
+
+		<!-- Default=0;  -->
+		<param name="firstIteration" value="0" />
+
+		<!-- Default=1000;  -->
+		<param name="lastIteration" value="0" />
+
+		<!-- Defines which mobility simulation will be used. Currently supported: qsim JDEQSim 
+		Depending on the chosen mobsim, you'll have to add additional config modules to configure the corresponding mobsim.
+		For 'qsim', add a module 'qsim' to the config. -->
+		<param name="mobsim" value="qsim" />
+
+		<param name="outputDirectory" value="test/output/ch/sbb/matsim/mobsim/qsim/pt/SBBTransitQSimEngineIntegrationTest/testIntegration/" />
+
+		<!-- Possible values: failIfDirectoryExists, overwriteExistingFiles, deleteDirectoryIfExists -->
+		<param name="overwriteFiles" value="failIfDirectoryExists" />
+
+		<!-- The type of routing (least cost path) algorithm used, may have the values: Dijkstra, FastDijkstra, AStarLandmarks or FastAStarLandmarks -->
+		<param name="routingAlgorithmType" value="Dijkstra" />
+
+		<!-- An identifier for the current run which is used as prefix for output files and mentioned in output xml files etc. -->
+		<param name="runId" value="null" />
+
+		<!-- Comma-separated list of visualizer output file formats. `transims', `googleearth', and `otfvis'. -->
+		<param name="snapshotFormat" value="" />
+
+		<!-- iterationNumber % writeEventsInterval == 0 defines in which iterations events are written to a file. `0' disables events writing completely. -->
+		<param name="writeEventsInterval" value="10" />
+
+		<!-- iterationNumber % writePlansInterval == 0 defines (hopefully) in which iterations plans are written to a file. `0' disables plans writing completely.  Some plans in early iterations are always written -->
+		<param name="writePlansInterval" value="10" />
+
+		<!-- iterationNumber % writeSnapshotsInterval == 0 defines in which iterations snapshots are written to a file. `0' disables snapshots writing completely -->
+		<param name="writeSnapshotsInterval" value="1" />
+	</module>
+
+<!-- ====================================================================== -->
+
+	<module name="counts" >
+
+		<!-- Transport modes that will be respected for the counts comparison. 'car' is default, which includes also bussed from the pt simulation module. Use this parameter in combination with 'filterModes' = true! -->
+		<param name="analyzedModes" value="car" />
+
+		<!-- Specifies over how many iterations the link volumes should be averaged that are used for the counts comparison. Use 1 or 0 to only use the link volumes of a single iteration. This values cannot be larger than the value specified for writeCountsInterval -->
+		<param name="averageCountsOverIterations" value="5" />
+
+		<!-- factor by which to re-scale the simulated values.  necessary when simulation runs with something different from 100%.  needs to be adapted manually -->
+		<param name="countsScaleFactor" value="1.0" />
+
+		<!-- distance to distanceFilterCenterNode to include counting stations. The unit of distance is the Euclidean distance implied by the coordinate system -->
+		<param name="distanceFilter" value="null" />
+
+		<!-- node id for center node of distance filter -->
+		<param name="distanceFilterCenterNode" value="null" />
+
+		<!-- If true, link counts from legs performed on modes not included in the 'analyzedModes' parameter are ignored. -->
+		<param name="filterModes" value="false" />
+
+		<!-- The Coordinates Reference System in which the coordinates are expressed in the input file. At import, the coordinates will be converted to the coordinate system defined in "global", and willbe converted back at export. If not specified, no conversion happens. -->
+		<param name="inputCRS" value="null" />
+
+		<!-- input file name to counts package -->
+		<param name="inputCountsFile" value="null" />
+
+		<!-- possible values: `html', `kml', `txt', `all' -->
+		<param name="outputformat" value="txt" />
+
+		<!-- Specifies how often the counts comparison should be calculated and written. -->
+		<param name="writeCountsInterval" value="10" />
+	</module>
+
+<!-- ====================================================================== -->
+
+	<module name="facilities" >
+
+		<!-- The Coordinates Reference System in which the coordinates are expressed in the input file. At import, the coordinates will be converted to the coordinate system defined in "global", and willbe converted back at export. If not specified, no conversion happens. -->
+		<param name="inputCRS" value="null" />
+
+		<param name="inputFacilitiesFile" value="null" />
+		<param name="inputFacilityAttributesFile" value="null" />
+	</module>
+
+<!-- ====================================================================== -->
+
+	<module name="global" >
+		<param name="coordinateSystem" value="Atlantis" />
+
+		<!-- "global" number of threads.  This number is used, e.g., for replanning, but NOT in the mobsim.  This can typically be set to as many cores as you have available, or possibly even slightly more. -->
+		<param name="numberOfThreads" value="2" />
+
+		<param name="randomSeed" value="4711" />
+	</module>
+
+<!-- ====================================================================== -->
+
+	<module name="households" >
+		<param name="inputFile" value="null" />
+		<param name="inputHouseholdAttributesFile" value="null" />
+	</module>
+
+<!-- ====================================================================== -->
+
+	<module name="linkStats" >
+
+		<!-- Specifies over how many iterations the link volumes should be averaged that are used for the link statistics. Use 1 or 0 to only use the link volumes of a single iteration. This values cannot be larger than the value specified for writeLinkStatsInterval -->
+		<param name="averageLinkStatsOverIterations" value="5" />
+
+		<!-- Specifies how often the link stats should be calculated and written. Use 0 to disable the generation of link stats. -->
+		<param name="writeLinkStatsInterval" value="10" />
+	</module>
+
+<!-- ====================================================================== -->
+
+	<module name="network" >
+
+		<!-- The Coordinates Reference System in which the coordinates are expressed in the input file. At import, the coordinates will be converted to the coordinate system defined in "global", and willbe converted back at export. If not specified, no conversion happens. -->
+		<param name="inputCRS" value="null" />
+
+		<param name="inputChangeEventsFile" value="null" />
+		<param name="inputNetworkFile" value="null" />
+		<param name="laneDefinitionsFile" value="null" />
+		<param name="timeVariantNetwork" value="false" />
+	</module>
+
+<!-- ====================================================================== -->
+
+	<module name="parallelEventHandling" >
+
+		<!-- Estimated number of events during mobsim run. An optional optimization hint for the framework. -->
+		<param name="estimatedNumberOfEvents" value="null" />
+
+		<!-- Number of threads for parallel events handler. 0 or null means the framework decides by itself. -->
+		<param name="numberOfThreads" value="null" />
+
+		<!-- If enabled, each event handler is assigned to its own thread. Note that enabling this feature disabled the numberOfThreads option! This feature is still experimental! -->
+		<param name="oneThreadPerHandler" value="false" />
+
+		<!-- If enabled, it is ensured that all events that are created during a time step of the mobility simulation are processed before the next time step is simulated. E.g. neccessary when within-day replanning is used. -->
+		<param name="synchronizeOnSimSteps" value="true" />
+	</module>
+
+<!-- ====================================================================== -->
+
+	<module name="planCalcScore" >
+
+		<!-- logit model scale parameter. default: 1.  Has name and default value for historical reasons (see Bryan Raney's phd thesis). -->
+		<param name="BrainExpBeta" value="1.0" />
+
+		<param name="PathSizeLogitBeta" value="1.0" />
+
+		<!-- fraction of iterations at which MSA score averaging is started. The matsim theory department suggests to use this together with switching off choice set innovation (where a similar switch exists), but it has not been tested yet. -->
+		<param name="fractionOfIterationsToStartScoreMSA" value="null" />
+
+		<!-- new_score = (1-learningRate)*old_score + learningRate * score_from_mobsim.  learning rates close to zero emulate score averaging, but slow down initial convergence -->
+		<param name="learningRate" value="1.0" />
+
+		<!-- There used to be a plateau between duration=0 and duration=zeroUtilityDuration. This caused durations to evolve to zero once they were below zeroUtilityDuration, causing problems.  Only use this switch if you need to be backwards compatible with some old results.  (changed nov'13) -->
+		<param name="usingOldScoringBelowZeroUtilityDuration" value="false" />
+
+		<!-- write a plans file in each iteration directory which contains what each agent actually did, and the score it received. -->
+		<param name="writeExperiencedPlans" value="false" />
+
+		<parameterset type="scoringParameters" >
+			<param name="earlyDeparture" value="-0.0" />
+			<param name="lateArrival" value="-18.0" />
+			<param name="marginalUtilityOfMoney" value="1.0" />
+			<param name="performing" value="6.0" />
+			<param name="subpopulation" value="null" />
+			<param name="utilityOfLineSwitch" value="-1.0" />
+			<param name="waiting" value="-0.0" />
+			<param name="waitingPt" value="-6.0" />
+
+			<parameterset type="activityParams" >
+				<param name="activityType" value="dummy" />
+				<param name="closingTime" value="undefined" />
+				<param name="earliestEndTime" value="undefined" />
+				<param name="latestStartTime" value="undefined" />
+				<param name="minimalDuration" value="undefined" />
+				<param name="openingTime" value="undefined" />
+				<param name="priority" value="1.0" />
+				<param name="scoringThisActivityAtAll" value="true" />
+
+				<!-- typical duration of activity.  needs to be defined and non-zero.  in sec. -->
+				<param name="typicalDuration" value="02:00:00" />
+
+				<!-- method to compute score at typical duration.  Options: | uniform | relative | Use uniform for backwards compatibility (all activities same score; higher proba to drop long acts). -->
+				<param name="typicalDurationScoreComputation" value="relative" />
+			</parameterset>
+
+			<parameterset type="activityParams" >
+				<param name="activityType" value="car interaction" />
+				<param name="closingTime" value="undefined" />
+				<param name="earliestEndTime" value="undefined" />
+				<param name="latestStartTime" value="undefined" />
+				<param name="minimalDuration" value="undefined" />
+				<param name="openingTime" value="undefined" />
+				<param name="priority" value="1.0" />
+				<param name="scoringThisActivityAtAll" value="false" />
+
+				<!-- typical duration of activity.  needs to be defined and non-zero.  in sec. -->
+				<param name="typicalDuration" value="undefined" />
+
+				<!-- method to compute score at typical duration.  Options: | uniform | relative | Use uniform for backwards compatibility (all activities same score; higher proba to drop long acts). -->
+				<param name="typicalDurationScoreComputation" value="relative" />
+			</parameterset>
+
+			<parameterset type="activityParams" >
+				<param name="activityType" value="pt interaction" />
+				<param name="closingTime" value="undefined" />
+				<param name="earliestEndTime" value="undefined" />
+				<param name="latestStartTime" value="undefined" />
+				<param name="minimalDuration" value="undefined" />
+				<param name="openingTime" value="undefined" />
+				<param name="priority" value="1.0" />
+				<param name="scoringThisActivityAtAll" value="false" />
+
+				<!-- typical duration of activity.  needs to be defined and non-zero.  in sec. -->
+				<param name="typicalDuration" value="undefined" />
+
+				<!-- method to compute score at typical duration.  Options: | uniform | relative | Use uniform for backwards compatibility (all activities same score; higher proba to drop long acts). -->
+				<param name="typicalDurationScoreComputation" value="relative" />
+			</parameterset>
+
+			<parameterset type="activityParams" >
+				<param name="activityType" value="bike interaction" />
+				<param name="closingTime" value="undefined" />
+				<param name="earliestEndTime" value="undefined" />
+				<param name="latestStartTime" value="undefined" />
+				<param name="minimalDuration" value="undefined" />
+				<param name="openingTime" value="undefined" />
+				<param name="priority" value="1.0" />
+				<param name="scoringThisActivityAtAll" value="false" />
+
+				<!-- typical duration of activity.  needs to be defined and non-zero.  in sec. -->
+				<param name="typicalDuration" value="undefined" />
+
+				<!-- method to compute score at typical duration.  Options: | uniform | relative | Use uniform for backwards compatibility (all activities same score; higher proba to drop long acts). -->
+				<param name="typicalDurationScoreComputation" value="relative" />
+			</parameterset>
+
+			<parameterset type="activityParams" >
+				<param name="activityType" value="other interaction" />
+				<param name="closingTime" value="undefined" />
+				<param name="earliestEndTime" value="undefined" />
+				<param name="latestStartTime" value="undefined" />
+				<param name="minimalDuration" value="undefined" />
+				<param name="openingTime" value="undefined" />
+				<param name="priority" value="1.0" />
+				<param name="scoringThisActivityAtAll" value="false" />
+
+				<!-- typical duration of activity.  needs to be defined and non-zero.  in sec. -->
+				<param name="typicalDuration" value="undefined" />
+
+				<!-- method to compute score at typical duration.  Options: | uniform | relative | Use uniform for backwards compatibility (all activities same score; higher proba to drop long acts). -->
+				<param name="typicalDurationScoreComputation" value="relative" />
+			</parameterset>
+
+			<parameterset type="activityParams" >
+				<param name="activityType" value="walk interaction" />
+				<param name="closingTime" value="undefined" />
+				<param name="earliestEndTime" value="undefined" />
+				<param name="latestStartTime" value="undefined" />
+				<param name="minimalDuration" value="undefined" />
+				<param name="openingTime" value="undefined" />
+				<param name="priority" value="1.0" />
+				<param name="scoringThisActivityAtAll" value="false" />
+
+				<!-- typical duration of activity.  needs to be defined and non-zero.  in sec. -->
+				<param name="typicalDuration" value="undefined" />
+
+				<!-- method to compute score at typical duration.  Options: | uniform | relative | Use uniform for backwards compatibility (all activities same score; higher proba to drop long acts). -->
+				<param name="typicalDurationScoreComputation" value="relative" />
+			</parameterset>
+
+			<parameterset type="modeParams" >
+
+				<!-- [utils] alternative-specific constant.  no guarantee that this is used anywhere. default=0 to be backwards compatible for the time being -->
+				<param name="constant" value="0.0" />
+
+				<!-- [utils/m] utility of walking per m, normally negative.  this is on top of the time (dis)utility. -->
+				<param name="marginalUtilityOfDistance_util_m" value="0.0" />
+
+				<!-- [utils/hr] additional marginal utility of traveling.  normally negative.  this comes on top of the opportunity cost of time -->
+				<param name="marginalUtilityOfTraveling_util_hr" value="-6.0" />
+
+				<param name="mode" value="car" />
+
+				<!-- [unit_of_money/m] conversion of distance into money. Normally negative. -->
+				<param name="monetaryDistanceRate" value="0.0" />
+			</parameterset>
+
+			<parameterset type="modeParams" >
+
+				<!-- [utils] alternative-specific constant.  no guarantee that this is used anywhere. default=0 to be backwards compatible for the time being -->
+				<param name="constant" value="0.0" />
+
+				<!-- [utils/m] utility of walking per m, normally negative.  this is on top of the time (dis)utility. -->
+				<param name="marginalUtilityOfDistance_util_m" value="0.0" />
+
+				<!-- [utils/hr] additional marginal utility of traveling.  normally negative.  this comes on top of the opportunity cost of time -->
+				<param name="marginalUtilityOfTraveling_util_hr" value="-6.0" />
+
+				<param name="mode" value="pt" />
+
+				<!-- [unit_of_money/m] conversion of distance into money. Normally negative. -->
+				<param name="monetaryDistanceRate" value="0.0" />
+			</parameterset>
+
+			<parameterset type="modeParams" >
+
+				<!-- [utils] alternative-specific constant.  no guarantee that this is used anywhere. default=0 to be backwards compatible for the time being -->
+				<param name="constant" value="0.0" />
+
+				<!-- [utils/m] utility of walking per m, normally negative.  this is on top of the time (dis)utility. -->
+				<param name="marginalUtilityOfDistance_util_m" value="0.0" />
+
+				<!-- [utils/hr] additional marginal utility of traveling.  normally negative.  this comes on top of the opportunity cost of time -->
+				<param name="marginalUtilityOfTraveling_util_hr" value="-6.0" />
+
+				<param name="mode" value="walk" />
+
+				<!-- [unit_of_money/m] conversion of distance into money. Normally negative. -->
+				<param name="monetaryDistanceRate" value="0.0" />
+			</parameterset>
+
+			<parameterset type="modeParams" >
+
+				<!-- [utils] alternative-specific constant.  no guarantee that this is used anywhere. default=0 to be backwards compatible for the time being -->
+				<param name="constant" value="0.0" />
+
+				<!-- [utils/m] utility of walking per m, normally negative.  this is on top of the time (dis)utility. -->
+				<param name="marginalUtilityOfDistance_util_m" value="0.0" />
+
+				<!-- [utils/hr] additional marginal utility of traveling.  normally negative.  this comes on top of the opportunity cost of time -->
+				<param name="marginalUtilityOfTraveling_util_hr" value="-6.0" />
+
+				<param name="mode" value="bike" />
+
+				<!-- [unit_of_money/m] conversion of distance into money. Normally negative. -->
+				<param name="monetaryDistanceRate" value="0.0" />
+			</parameterset>
+
+			<parameterset type="modeParams" >
+
+				<!-- [utils] alternative-specific constant.  no guarantee that this is used anywhere. default=0 to be backwards compatible for the time being -->
+				<param name="constant" value="0.0" />
+
+				<!-- [utils/m] utility of walking per m, normally negative.  this is on top of the time (dis)utility. -->
+				<param name="marginalUtilityOfDistance_util_m" value="0.0" />
+
+				<!-- [utils/hr] additional marginal utility of traveling.  normally negative.  this comes on top of the opportunity cost of time -->
+				<param name="marginalUtilityOfTraveling_util_hr" value="-6.0" />
+
+				<param name="mode" value="ride" />
+
+				<!-- [unit_of_money/m] conversion of distance into money. Normally negative. -->
+				<param name="monetaryDistanceRate" value="0.0" />
+			</parameterset>
+
+			<parameterset type="modeParams" >
+
+				<!-- [utils] alternative-specific constant.  no guarantee that this is used anywhere. default=0 to be backwards compatible for the time being -->
+				<param name="constant" value="0.0" />
+
+				<!-- [utils/m] utility of walking per m, normally negative.  this is on top of the time (dis)utility. -->
+				<param name="marginalUtilityOfDistance_util_m" value="0.0" />
+
+				<!-- [utils/hr] additional marginal utility of traveling.  normally negative.  this comes on top of the opportunity cost of time -->
+				<param name="marginalUtilityOfTraveling_util_hr" value="-6.0" />
+
+				<param name="mode" value="other" />
+
+				<!-- [unit_of_money/m] conversion of distance into money. Normally negative. -->
+				<param name="monetaryDistanceRate" value="0.0" />
+			</parameterset>
+		</parameterset>
+	</module>
+
+<!-- ====================================================================== -->
+
+	<module name="plans" >
+
+		<!-- String: minOfDurationAndEndTime tryEndTimeThenDuration endTimeOnly. Anything besides minOfDurationAndEndTime will internally use a different (simpler) version of the TimeAllocationMutator. -->
+		<param name="activityDurationInterpretation" value="tryEndTimeThenDuration" />
+
+		<!-- The Coordinates Reference System in which the coordinates are expressed in the input file. At import, the coordinates will be converted to the coordinate system defined in "global", and willbe converted back at export. If not specified, no conversion happens. -->
+		<param name="inputCRS" value="null" />
+
+		<!-- Path to a file containing person attributes (required file format: ObjectAttributes). -->
+		<param name="inputPersonAttributesFile" value="null" />
+
+		<param name="inputPlansFile" value="null" />
+
+		<!-- Defines how routes are stored in memory. Currently supported: LinkNetworkRoute, CompressedNetworkRoute. -->
+		<param name="networkRouteType" value="LinkNetworkRoute" />
+
+		<!-- (not tested) will remove plan attributes that are presumably not used, such as activityStartTime. default=false -->
+		<param name="removingUnnecessaryPlanAttributes" value="false" />
+
+		<!-- Name of the (Object)Attribute defining the subpopulation to which pertains a Person (as freight, through traffic, etc.). The attribute must be of String type.  Change away from default only in desperate situations. -->
+		<param name="subpopulationAttributeName" value="subpopulation" />
+	</module>
+
+<!-- ====================================================================== -->
+
+	<module name="planscalcroute" >
+
+		<!-- All the modes for which the router is supposed to generate network routes (like car) -->
+		<param name="networkModes" value="car" />
+
+		<parameterset type="teleportedModeParameters" >
+			<param name="beelineDistanceFactor" value="1.3" />
+			<param name="mode" value="bike" />
+
+			<!-- Free-speed factor for a teleported mode. Travel time = teleportedModeFreespeedFactor * <freespeed car travel time>. Insert a line like this for every such mode. Please do not set teleportedModeFreespeedFactor as well as teleportedModeSpeed for the same mode, but if you do, +teleportedModeFreespeedFactor wins over teleportedModeSpeed. -->
+			<param name="teleportedModeFreespeedFactor" value="null" />
+
+			<!-- Speed for a teleported mode. Travel time = (<beeline distance> * beelineDistanceFactor) / teleportedModeSpeed. Insert a line like this for every such mode. -->
+			<param name="teleportedModeSpeed" value="4.166666666666667" />
+		</parameterset>
+
+		<parameterset type="teleportedModeParameters" >
+			<param name="beelineDistanceFactor" value="1.3" />
+			<param name="mode" value="walk" />
+
+			<!-- Free-speed factor for a teleported mode. Travel time = teleportedModeFreespeedFactor * <freespeed car travel time>. Insert a line like this for every such mode. Please do not set teleportedModeFreespeedFactor as well as teleportedModeSpeed for the same mode, but if you do, +teleportedModeFreespeedFactor wins over teleportedModeSpeed. -->
+			<param name="teleportedModeFreespeedFactor" value="null" />
+
+			<!-- Speed for a teleported mode. Travel time = (<beeline distance> * beelineDistanceFactor) / teleportedModeSpeed. Insert a line like this for every such mode. -->
+			<param name="teleportedModeSpeed" value="0.8333333333333333" />
+		</parameterset>
+
+		<parameterset type="teleportedModeParameters" >
+			<param name="beelineDistanceFactor" value="1.3" />
+			<param name="mode" value="access_walk" />
+
+			<!-- Free-speed factor for a teleported mode. Travel time = teleportedModeFreespeedFactor * <freespeed car travel time>. Insert a line like this for every such mode. Please do not set teleportedModeFreespeedFactor as well as teleportedModeSpeed for the same mode, but if you do, +teleportedModeFreespeedFactor wins over teleportedModeSpeed. -->
+			<param name="teleportedModeFreespeedFactor" value="null" />
+
+			<!-- Speed for a teleported mode. Travel time = (<beeline distance> * beelineDistanceFactor) / teleportedModeSpeed. Insert a line like this for every such mode. -->
+			<param name="teleportedModeSpeed" value="0.8333333333333333" />
+		</parameterset>
+
+		<parameterset type="teleportedModeParameters" >
+			<param name="beelineDistanceFactor" value="1.3" />
+			<param name="mode" value="egress_walk" />
+
+			<!-- Free-speed factor for a teleported mode. Travel time = teleportedModeFreespeedFactor * <freespeed car travel time>. Insert a line like this for every such mode. Please do not set teleportedModeFreespeedFactor as well as teleportedModeSpeed for the same mode, but if you do, +teleportedModeFreespeedFactor wins over teleportedModeSpeed. -->
+			<param name="teleportedModeFreespeedFactor" value="null" />
+
+			<!-- Speed for a teleported mode. Travel time = (<beeline distance> * beelineDistanceFactor) / teleportedModeSpeed. Insert a line like this for every such mode. -->
+			<param name="teleportedModeSpeed" value="0.8333333333333333" />
+		</parameterset>
+
+		<parameterset type="teleportedModeParameters" >
+			<param name="beelineDistanceFactor" value="1.3" />
+			<param name="mode" value="undefined" />
+
+			<!-- Free-speed factor for a teleported mode. Travel time = teleportedModeFreespeedFactor * <freespeed car travel time>. Insert a line like this for every such mode. Please do not set teleportedModeFreespeedFactor as well as teleportedModeSpeed for the same mode, but if you do, +teleportedModeFreespeedFactor wins over teleportedModeSpeed. -->
+			<param name="teleportedModeFreespeedFactor" value="null" />
+
+			<!-- Speed for a teleported mode. Travel time = (<beeline distance> * beelineDistanceFactor) / teleportedModeSpeed. Insert a line like this for every such mode. -->
+			<param name="teleportedModeSpeed" value="13.88888888888889" />
+		</parameterset>
+
+		<parameterset type="teleportedModeParameters" >
+			<param name="beelineDistanceFactor" value="1.3" />
+			<param name="mode" value="ride" />
+
+			<!-- Free-speed factor for a teleported mode. Travel time = teleportedModeFreespeedFactor * <freespeed car travel time>. Insert a line like this for every such mode. Please do not set teleportedModeFreespeedFactor as well as teleportedModeSpeed for the same mode, but if you do, +teleportedModeFreespeedFactor wins over teleportedModeSpeed. -->
+			<param name="teleportedModeFreespeedFactor" value="1.0" />
+
+			<!-- Speed for a teleported mode. Travel time = (<beeline distance> * beelineDistanceFactor) / teleportedModeSpeed. Insert a line like this for every such mode. -->
+			<param name="teleportedModeSpeed" value="null" />
+		</parameterset>
+
+		<parameterset type="teleportedModeParameters" >
+			<param name="beelineDistanceFactor" value="1.3" />
+			<param name="mode" value="pt" />
+
+			<!-- Free-speed factor for a teleported mode. Travel time = teleportedModeFreespeedFactor * <freespeed car travel time>. Insert a line like this for every such mode. Please do not set teleportedModeFreespeedFactor as well as teleportedModeSpeed for the same mode, but if you do, +teleportedModeFreespeedFactor wins over teleportedModeSpeed. -->
+			<param name="teleportedModeFreespeedFactor" value="2.0" />
+
+			<!-- Speed for a teleported mode. Travel time = (<beeline distance> * beelineDistanceFactor) / teleportedModeSpeed. Insert a line like this for every such mode. -->
+			<param name="teleportedModeSpeed" value="null" />
+		</parameterset>
+	</module>
+
+<!-- ====================================================================== -->
+
+	<module name="ptCounts" >
+
+		<!-- factor by which to re-scale the simulated values.  necessary when simulation runs with something different from 100%.  needs to be adapted manually -->
+		<param name="countsScaleFactor" value="1.0" />
+
+		<!-- distance to distanceFilterCenterNode to include counting stations. The unit of distance is the Euclidean distance implied by the coordinate system -->
+		<param name="distanceFilter" value="null" />
+
+		<!-- node id for center node of distance filter -->
+		<param name="distanceFilterCenterNode" value="null" />
+
+		<!-- input file containing the alighting (getting off) counts for pt -->
+		<param name="inputAlightCountsFile" value="null" />
+
+		<!-- input file containing the boarding (getting on) counts for pt -->
+		<param name="inputBoardCountsFile" value="null" />
+
+		<!-- input file containing the occupancy counts for pt -->
+		<param name="inputOccupancyCountsFile" value="null" />
+
+		<!-- possible values: `html', `kml', `txt', `all' -->
+		<param name="outputformat" value="null" />
+
+		<!-- every how many iterations (starting with 0) counts comparisons are generated -->
+		<param name="ptCountsInterval" value="10" />
+	</module>
+
+<!-- ====================================================================== -->
+
+	<module name="qsim" >
+		<param name="endTime" value="24:00:00" />
+		<param name="flowCapacityFactor" value="1.0" />
+
+		<!-- decides if waiting vehicles enter the network after or before the already driving vehicles were moved. Default: false -->
+		<param name="insertingWaitingVehiclesBeforeDrivingVehicles" value="false" />
+
+		<!-- If link dynamics is set as SeepageQ, set to false if all seep modes should perform seepage. Default is true (better option). -->
+		<param name="isRestrictingSeepage" value="true" />
+
+		<!-- If link dynamics is set as SeepageQ, set to true if seep mode do not consumes any space on the link. Default is false. -->
+		<param name="isSeepModeStorageFree" value="false" />
+
+		<!-- default: FIFO; options: FIFO PassingQ SeepageQ -->
+		<param name="linkDynamics" value="FIFO" />
+
+		<!-- The (initial) width of the links of the network. Use positive floating point values. This is used only for visualisation. -->
+		<param name="linkWidth" value="30.0" />
+
+		<!-- [comma-separated list] Defines which modes are congested modes. Technically, these are the modes that the departure handler of the netsimengine handles.  Effective cell size, effective lane width, flow capacity factor, and storage capacity factor need to be set with diligence.  Need to be vehicular modes to make sense. -->
+		<param name="mainMode" value="car" />
+
+		<!-- Shortens a link in the visualization, i.e. its start and end point are moved into towards the center. Does not affect traffic flow.  -->
+		<param name="nodeOffset" value="0.0" />
+
+		<!-- Number of threads used for the QSim.  Note that this setting is independent from the "global" threads setting.  In contrast to earlier versions, the non-parallel special version is no longer there. -->
+		<param name="numberOfThreads" value="1" />
+
+		<!-- Boolean. `true': stuck vehicles are removed, aborting the plan; `false': stuck vehicles are forced into the next link. `false' is probably the better choice. -->
+		<param name="removeStuckVehicles" value="false" />
+
+		<!-- If link dynamics is set as SeepageQ, set a seep mode. Default is bike. -->
+		<param name="seepMode" value="bike" />
+
+		<!-- Possible values: minOfEndtimeAndMobsimFinished, onlyUseEndtime -->
+		<param name="simEndtimeInterpretation" value="null" />
+
+		<!-- Options: maxOfStarttimeAndEarliestActivityEnd onlyUseStarttime  -->
+		<param name="simStarttimeInterpretation" value="maxOfStarttimeAndEarliestActivityEnd" />
+
+		<!-- snapshotStyle. One of: equiDist queue withHoles withHolesAndShowHoles kinematicWaves  -->
+		<param name="snapshotStyle" value="equiDist" />
+
+		<param name="snapshotperiod" value="00:00:00" />
+		<param name="startTime" value="undefined" />
+		<param name="storageCapacityFactor" value="1.0" />
+
+		<!-- time in seconds.  Time after which the frontmost vehicle on a link is called `stuck' if it does not move. -->
+		<param name="stuckTime" value="10.0" />
+
+		<param name="timeStepSize" value="00:00:01" />
+
+		<!-- options: queue withHoles kinematicWaves  -->
+		<param name="trafficDynamics" value="queue" />
+
+		<!-- Set this parameter to true if lanes should be used, false if not. -->
+		<param name="useLanes" value="false" />
+
+		<!-- If a route does not reference a vehicle, agents will use the vehicle with the same id as their own. -->
+		<param name="usePersonIdForMissingVehicleId" value="true" />
+
+		<!-- If false, the qsim accumulates fractional flows up to one flow unit in every time step.  If true, flows are updated only if an agent wants to enter the link or an agent is added to buffer. Default is true. -->
+		<param name="usingFastCapacityUpdate" value="true" />
+
+		<!-- if the qsim should use as many runners as there are threads (Christoph's dissertation version) or more of them, together with a thread pool (seems to be faster in some situations, but is not tested). -->
+		<param name="usingThreadpool" value="true" />
+
+		<!-- Defines what happens if an agent wants to depart, but the specified vehicle is not available. One of: teleport wait exception  -->
+		<param name="vehicleBehavior" value="teleport" />
+
+		<!-- If vehicles should all be the same default vehicle, or come from the vehicles file, or something else.  Possible values:  defaultVehicle modeVehicleTypesFromVehiclesData fromVehiclesData -->
+		<param name="vehiclesSource" value="defaultVehicle" />
+	</module>
+
+<!-- ====================================================================== -->
+
+	<module name="scenario" >
+	</module>
+
+<!-- ====================================================================== -->
+
+	<module name="strategy" >
+
+		<!-- the external executable will be called with a config file as argument.  This is the pathname to a possible skeleton config, to which additional information will be added.  Can be null. -->
+		<param name="ExternalExeConfigTemplate" value="null" />
+
+		<!-- time out value (in seconds) after which matsim will consider the external strategy as failed -->
+		<param name="ExternalExeTimeOut" value="3600" />
+
+		<!-- root directory for temporary files generated by the external executable. Provided as a service; I don't think this is used by MATSim. -->
+		<param name="ExternalExeTmpFileRootDir" value="null" />
+
+		<!-- fraction of iterations where innovative strategies are switched off.  Something link 0.8 should be good.  E.g. if you run from iteration 400 to iteration 500, innovation is switched off at iteration 480 -->
+		<param name="fractionOfIterationsToDisableInnovation" value="Infinity" />
+
+		<!-- maximum number of plans per agent.  ``0'' means ``infinity''.  Currently (2010), ``5'' is a good number -->
+		<param name="maxAgentPlanMemorySize" value="5" />
+
+		<!-- strategyName of PlanSelector for plans removal.  Possible defaults: WorstPlanSelector SelectRandom SelectExpBetaForRemoval ChangeExpBetaForRemoval PathSizeLogitSelectorForRemoval . The current default, WorstPlanSelector is not a good choice from a discrete choice theoretical perspective. Alternatives, however, have not been systematically tested. kai, feb'12 -->
+		<param name="planSelectorForRemoval" value="WorstPlanSelector" />
+	</module>
+
+<!-- ====================================================================== -->
+
+	<module name="subtourModeChoice" >
+
+		<!-- Defines the chain-based modes, seperated by commas -->
+		<param name="chainBasedModes" value="car,bike" />
+
+		<!-- Defines whether car availability must be considered or not. A agent has no car only if it has no license, or never access to a car -->
+		<param name="considerCarAvailability" value="false" />
+
+		<!-- Defines all the modes available, including chain-based modes, seperated by commas -->
+		<param name="modes" value="car,pt,bike,walk" />
+	</module>
+
+<!-- ====================================================================== -->
+
+	<module name="transit" >
+
+		<!-- The Coordinates Reference System in which the coordinates are expressed in the input file. At import, the coordinates will be converted to the coordinate system defined in "global", and willbe converted back at export. If not specified, no conversion happens. -->
+		<param name="inputScheduleCRS" value="null" />
+
+		<!-- Optional input file containing additional attributes for transit lines, stored as ObjectAttributes. -->
+		<param name="transitLinesAttributesFile" value="null" />
+
+		<!-- Comma-separated list of transportation modes that are handled as transit. Defaults to 'pt'. -->
+		<param name="transitModes" value="pt" />
+
+		<!-- Input file containing the transit schedule to be simulated. -->
+		<param name="transitScheduleFile" value="null" />
+
+		<!-- Optional input file containing additional attributes for transit stop facilities, stored as ObjectAttributes. -->
+		<param name="transitStopsAttributesFile" value="null" />
+
+		<!-- Set this parameter to true if transit should be simulated, false if not. -->
+		<param name="useTransit" value="true" />
+
+		<!-- Input file containing the vehicles used by the departures in the transit schedule. -->
+		<param name="vehiclesFile" value="null" />
+	</module>
+
+<!-- ====================================================================== -->
+
+	<module name="transitRouter" >
+
+		<!-- additional time the router allocates when a line switch happens. Can be interpreted as a 'safety' time that agents need to safely transfer from one line to another -->
+		<param name="additionalTransferTime" value="0.0" />
+
+		<!-- Factor with which direct walk generalized cost is multiplied before it is compared to the pt generalized cost.  Set to a very high value to reduce direct walk results. -->
+		<param name="directWalkFactor" value="1.0" />
+
+		<!-- step size to increase searchRadius if no stops are found -->
+		<param name="extensionRadius" value="200.0" />
+
+		<!-- maximum beeline distance between stops that agents could transfer to by walking -->
+		<param name="maxBeelineWalkConnectionDistance" value="100.0" />
+
+		<!-- the radius in which stop locations are searched, given a start or target coordinate -->
+		<param name="searchRadius" value="1000.0" />
+	</module>
+
+<!-- ====================================================================== -->
+
+	<module name="travelTimeCalculator" >
+
+		<!-- Transport modes that will be respected by the travel time collector. 'car' is default, which includes also busses from the pt simulation module. Use this parameter in combination with 'filterModes' = true! -->
+		<param name="analyzedModes" value="car" />
+
+		<param name="calculateLinkToLinkTravelTimes" value="false" />
+		<param name="calculateLinkTravelTimes" value="true" />
+
+		<!-- If true, link travel times from legs performed on modes not included in the 'analyzedModes' parameter are ignored. -->
+		<param name="filterModes" value="false" />
+
+		<!-- The lenght (in sec) of the time period that is splited into time bins; an additional time bin is created to aggregate all travel times collected after maxTime -->
+		<param name="maxTime" value="108000" />
+
+		<!-- If true, link travel times are measured and calculated separately for each mode in analyzedModes. Other modes are ignored. If true, filterModes has no effect. -->
+		<param name="separateModes" value="false" />
+
+		<!-- How to deal with congested time bins that have no link entry events. `optimistic' assumes free speed (too optimistic); 'experimental_LastMile' is experimental and probably too pessimistic. -->
+		<param name="travelTimeAggregator" value="optimistic" />
+
+		<!-- The size of the time bin (in sec) into which the link travel times are aggregated for the router -->
+		<param name="travelTimeBinSize" value="900" />
+
+		<!-- possible values: nullTravelTimeCalculatorArray TravelTimeCalculatorHashMap  -->
+		<param name="travelTimeCalculator" value="TravelTimeCalculatorArray" />
+
+		<!-- How to deal with link entry times at different positions during the time bin. Currently supported: average, linearinterpolation -->
+		<param name="travelTimeGetter" value="average" />
+	</module>
+
+<!-- ====================================================================== -->
+
+	<module name="vehicles" >
+		<param name="vehiclesFile" value="null" />
+	</module>
+
+<!-- ====================================================================== -->
+
+	<module name="vspExperimental" >
+
+		<!-- (do not use except of you have to) There was a problem with pt interaction scoring.  Some people solved it by overwriting the parameters of the pt interaction activity type.  Doing this now throws an Exception.  If you still insist on doing this, set the following to true. -->
+		<param name="isAbleToOverwritePtInteractionParams" value="false" />
+
+		<param name="isGeneratingBoardingDeniedEvent" value="false" />
+
+		<!-- if an approximation of the opportunity cost of time is included into the radius calculation for location choice.`true' will be faster, but it is an approximation.  Default is `true'; `false' is available for backwards compatibility. -->
+		<param name="isUsingOpportunityCostOfTimeForLocationChoice" value="true" />
+
+		<param name="logitScaleParamForPlansRemoval" value="1.0" />
+
+		<!-- Options: | ignore | info | warn | abort | .  When violating VSP defaults, this results in nothing, logfile infos, logfile warnings, or aborts.  Members of VSP should use `abort' or talk to kai. -->
+		<param name="vspDefaultsCheckingLevel" value="ignore" />
+
+		<!-- if true then writes output_events in output directory.  default is `false'. Will only work when lastIteration is multiple of events writing interval -->
+		<param name="writingOutputEvents" value="true" />
+	</module>
+
+<!-- ====================================================================== -->
+
+</config>
+
+2018-06-13 18:17:16,148  INFO ControlerUtils:63 Complete config dump done.
+2018-06-13 18:17:16,148  INFO ControlerUtils:64 Checking consistency of config...
+2018-06-13 18:17:16,148  INFO PlanCalcScoreConfigGroup$ScoringParameterSet:1233 NO OPENING OR CLOSING TIMES DEFINED!
+
+
+There is no activity type that has an opening *and* closing time (or opening time and late penalty) defined.
+This usually means that the activity chains can be shifted by an arbitrary
+number of hours without having an effect on the score of the plans, and thus
+resulting in wrong results / traffic patterns.
+If you are using MATSim without time adaptation, you can ignore this warning.
+
+
+
+2018-06-13 18:17:16,148  INFO VspConfigConsistencyCheckerImpl:58 NOT running vsp config consistency check because vsp defaults checking level is set to IGNORE
+2018-06-13 18:17:16,148  WARN ConfigConsistencyCheckerImpl:156 Your are using Transit but have not provided a transit vehicles file. This most likely won't work.
+2018-06-13 18:17:16,148  INFO ControlerUtils:66 Checking consistency of config done.
+2018-06-13 18:17:16,163  INFO Counter:67 [PersonPrepareForSim] handled person # 0
+2018-06-13 18:17:16,164  INFO AbstractController:133 ###################################################
+2018-06-13 18:17:16,164  INFO AbstractController:134 ### ITERATION 0 BEGINS
+2018-06-13 18:17:16,166  INFO ControlerListenerManagerImpl:145 calling notifyIterationStarts on org.matsim.analysis.LegHistogramListener
+2018-06-13 18:17:16,166  INFO ControlerListenerManagerImpl:145 calling notifyIterationStarts on org.matsim.analysis.LinkStatsControlerListener
+2018-06-13 18:17:16,166  INFO ControlerListenerManagerImpl:145 calling notifyIterationStarts on org.matsim.core.replanning.ReplanningContextImpl
+2018-06-13 18:17:16,167  INFO ControlerListenerManagerImpl:145 calling notifyIterationStarts on org.matsim.core.scoring.ExperiencedPlansServiceImpl$1
+2018-06-13 18:17:16,167  INFO ControlerListenerManagerImpl:145 calling notifyIterationStarts on org.matsim.core.scoring.ScoringFunctionsForPopulation$1
+2018-06-13 18:17:16,167  INFO ControlerListenerManagerImpl:148 [it.0] all ControlerIterationStartsListeners called.
+2018-06-13 18:17:16,168  INFO ControlerListenerManagerImpl:224 calling notifyBeforeMobsim on org.matsim.core.controler.corelisteners.EventsHandlingImpl
+2018-06-13 18:17:16,169  INFO EventsManagerImpl:170 resetting Event-Handlers
+2018-06-13 18:17:16,169  INFO EventsManagerImpl:177   org.matsim.core.trafficmonitoring.TravelTimeCalculator
+2018-06-13 18:17:16,170  INFO EventsManagerImpl:177   org.matsim.core.scoring.EventsToLegs
+2018-06-13 18:17:16,171  INFO EventsManagerImpl:177   org.matsim.analysis.VolumesAnalyzer
+2018-06-13 18:17:16,171  INFO EventsManagerImpl:177   org.matsim.core.scoring.EventsToActivities
+2018-06-13 18:17:16,171  INFO EventsManagerImpl:177   org.matsim.analysis.CalcLegTimes
+2018-06-13 18:17:16,171  INFO EventsManagerImpl:177   org.matsim.analysis.LegHistogram
+2018-06-13 18:17:16,171  INFO EventsManagerImpl:177   org.matsim.core.scoring.ScoringFunctionsForPopulation
+2018-06-13 18:17:16,182  INFO EventsManagerImpl:144 adding Event-Handler: org.matsim.core.events.algorithms.EventWriterXML
+2018-06-13 18:17:16,183  INFO EventsManagerImpl:148   org.matsim.core.events.algorithms.EventWriter
+2018-06-13 18:17:16,183  INFO EventsManagerImpl:148   org.matsim.core.events.handler.BasicEventHandler
+2018-06-13 18:17:16,183  INFO EventsManagerImpl:207     > org.matsim.api.core.v01.events.Event
+2018-06-13 18:17:16,183  INFO EventsManagerImpl:156 
+2018-06-13 18:17:16,183  INFO EventsManagerImpl:144 adding Event-Handler: org.matsim.core.events.algorithms.EventWriterXML
+2018-06-13 18:17:16,183  INFO EventsManagerImpl:148   org.matsim.core.events.algorithms.EventWriter
+2018-06-13 18:17:16,184  INFO EventsManagerImpl:148   org.matsim.core.events.handler.BasicEventHandler
+2018-06-13 18:17:16,184  INFO EventsManagerImpl:207     > org.matsim.api.core.v01.events.Event
+2018-06-13 18:17:16,184  INFO EventsManagerImpl:156 
+2018-06-13 18:17:16,185  INFO ControlerListenerManagerImpl:224 calling notifyBeforeMobsim on org.matsim.core.controler.corelisteners.PlansDumpingImpl
+2018-06-13 18:17:16,186  INFO PlansDumpingImpl:75 dumping plans...
+2018-06-13 18:17:16,199  INFO PopulationWriter:139 Population written to: test/output/ch/sbb/matsim/mobsim/qsim/pt/SBBTransitQSimEngineIntegrationTest/testIntegration/ITERS/it.0/0.plans.xml.gz
+2018-06-13 18:17:16,201  INFO Counter:67 [PopulationWriter] dumped person # 0
+2018-06-13 18:17:16,210  INFO PlansDumpingImpl:92 finished plans dump.
+2018-06-13 18:17:16,210  INFO ControlerListenerManagerImpl:229 calling notifyBeforeMobsim on org.matsim.core.population.VspPlansCleaner
+2018-06-13 18:17:16,210  INFO ControlerListenerManagerImpl:232 [it.0] all ControlerBeforeMobsimListeners called.
+2018-06-13 18:17:16,290  INFO MobsimListenerManager:49 calling addQueueSimulationListener
+2018-06-13 18:17:16,290  INFO MobsimListenerManager:53   assigned class org.matsim.core.mobsim.framework.listeners.MobsimListener to interface org.matsim.core.mobsim.framework.listeners.MobsimInitializedListener
+2018-06-13 18:17:16,290  INFO MobsimListenerManager:53   assigned class org.matsim.core.mobsim.framework.listeners.MobsimListener to interface org.matsim.vis.snapshotwriters.SnapshotWriterManager
+2018-06-13 18:17:16,290  INFO MobsimListenerManager:53   assigned class org.matsim.core.mobsim.framework.listeners.MobsimListener to interface org.matsim.core.mobsim.framework.listeners.MobsimListener
+2018-06-13 18:17:16,290  INFO MobsimListenerManager:53   assigned class org.matsim.core.mobsim.framework.listeners.MobsimListener to interface org.matsim.core.mobsim.framework.listeners.MobsimBeforeCleanupListener
+2018-06-13 18:17:16,290  INFO MobsimListenerManager:53   assigned class org.matsim.core.mobsim.framework.listeners.MobsimListener to interface org.matsim.core.mobsim.framework.listeners.MobsimAfterSimStepListener
+2018-06-13 18:17:16,322  INFO Injector:83 org.matsim.core.mobsim.qsim.qnetsimengine.VehicularDepartureHandler 
+2018-06-13 18:17:16,336  INFO Injector:84   --> provider: Key[type=org.matsim.core.mobsim.qsim.qnetsimengine.QNetsimEngineDepartureHandlerProvider, annotation=[none]][Scopes.SINGLETON]
+2018-06-13 18:17:16,336  INFO Injector:85   --> source: org.matsim.core.mobsim.qsim.qnetsimengine.QNetsimEnginePlugin$1.configure(QNetsimEnginePlugin.java:25)
+2018-06-13 18:17:16,336  INFO Injector:87   --> scope: eager singleton
+2018-06-13 18:17:16,336  INFO Injector:91 
+2018-06-13 18:17:16,338  INFO Injector:83 org.matsim.core.mobsim.qsim.agents.AgentFactory 
+2018-06-13 18:17:16,339  INFO Injector:84   --> provider: FactoryProxy{key=Key[type=org.matsim.core.mobsim.qsim.agents.AgentFactory, annotation=[none]], provider=com.google.inject.internal.ConstructorBindingImpl$Factory@305a0c5f}[Scopes.SINGLETON]
+2018-06-13 18:17:16,339  INFO Injector:85   --> source: org.matsim.core.mobsim.qsim.PopulationPlugin$1.configure(PopulationPlugin.java:28)
+2018-06-13 18:17:16,339  INFO Injector:87   --> scope: eager singleton
+2018-06-13 18:17:16,339  INFO Injector:91 
+2018-06-13 18:17:16,339  INFO Injector:83 org.matsim.core.mobsim.qsim.interfaces.Netsim 
+2018-06-13 18:17:16,339  INFO Injector:84   --> provider: FactoryProxy{key=Key[type=org.matsim.core.mobsim.qsim.interfaces.Netsim, annotation=[none]], provider=com.google.inject.internal.ConstructorBindingImpl$Factory@22ffa91a[Scopes.SINGLETON]}
+2018-06-13 18:17:16,339  INFO Injector:85   --> source: org.matsim.core.mobsim.qsim.QSimProvider$1.configure(QSimProvider.java:65)
+2018-06-13 18:17:16,339  INFO Injector:87   --> scope: Scopes.NO_SCOPE
+2018-06-13 18:17:16,339  INFO Injector:91 
+2018-06-13 18:17:16,339  INFO Injector:83 org.matsim.core.mobsim.jdeqsim.MessageQueue 
+2018-06-13 18:17:16,339  INFO Injector:84   --> provider: com.google.inject.internal.ConstructorBindingImpl$Factory@66746f57[Scopes.SINGLETON]
+2018-06-13 18:17:16,339  INFO Injector:85   --> source: org.matsim.core.mobsim.qsim.messagequeueengine.MessageQueuePlugin$1.configure(MessageQueuePlugin.java:24)
+2018-06-13 18:17:16,339  INFO Injector:87   --> scope: eager singleton
+2018-06-13 18:17:16,344  INFO Injector:91 
+2018-06-13 18:17:16,344  INFO Injector:83 org.matsim.core.mobsim.qsim.jdeqsimengine.SteppableScheduler 
+2018-06-13 18:17:16,344  INFO Injector:84   --> provider: com.google.inject.internal.ConstructorBindingImpl$Factory@1817f1eb[Scopes.SINGLETON]
+2018-06-13 18:17:16,345  INFO Injector:85   --> source: org.matsim.core.mobsim.qsim.messagequeueengine.MessageQueuePlugin$1.configure(MessageQueuePlugin.java:25)
+2018-06-13 18:17:16,345  INFO Injector:87   --> scope: eager singleton
+2018-06-13 18:17:16,345  INFO Injector:91 
+2018-06-13 18:17:16,345  INFO Injector:83 org.matsim.core.mobsim.qsim.messagequeueengine.MessageQueueEngine 
+2018-06-13 18:17:16,346  INFO Injector:84   --> provider: com.google.inject.internal.ConstructorBindingImpl$Factory@c5dc4a2[Scopes.SINGLETON]
+2018-06-13 18:17:16,346  INFO Injector:85   --> source: org.matsim.core.mobsim.qsim.messagequeueengine.MessageQueuePlugin$1.configure(MessageQueuePlugin.java:26)
+2018-06-13 18:17:16,346  INFO Injector:87   --> scope: eager singleton
+2018-06-13 18:17:16,346  INFO Injector:91 
+2018-06-13 18:17:16,346  INFO Injector:83 org.matsim.core.mobsim.qsim.ActivityEngine 
+2018-06-13 18:17:16,347  INFO Injector:84   --> provider: com.google.inject.internal.ConstructorBindingImpl$Factory@373ebf74[Scopes.SINGLETON]
+2018-06-13 18:17:16,347  INFO Injector:85   --> source: org.matsim.core.mobsim.qsim.ActivityEnginePlugin$1.configure(ActivityEnginePlugin.java:23)
+2018-06-13 18:17:16,347  INFO Injector:87   --> scope: eager singleton
+2018-06-13 18:17:16,347  INFO Injector:91 
+2018-06-13 18:17:16,348  INFO Injector:83 org.matsim.core.mobsim.qsim.qnetsimengine.QNetsimEngine 
+2018-06-13 18:17:16,348  INFO Injector:84   --> provider: com.google.inject.internal.ConstructorBindingImpl$Factory@112f364d[Scopes.SINGLETON]
+2018-06-13 18:17:16,348  INFO Injector:85   --> source: org.matsim.core.mobsim.qsim.qnetsimengine.QNetsimEnginePlugin$1.configure(QNetsimEnginePlugin.java:24)
+2018-06-13 18:17:16,348  INFO Injector:87   --> scope: eager singleton
+2018-06-13 18:17:16,349  INFO Injector:91 
+2018-06-13 18:17:16,349  INFO Injector:83 org.matsim.core.mobsim.qsim.DefaultTeleportationEngine 
+2018-06-13 18:17:16,349  INFO Injector:84   --> provider: com.google.inject.internal.ConstructorBindingImpl$Factory@241e8ea6[Scopes.SINGLETON]
+2018-06-13 18:17:16,350  INFO Injector:85   --> source: org.matsim.core.mobsim.qsim.TeleportationPlugin$1.configure(TeleportationPlugin.java:21)
+2018-06-13 18:17:16,350  INFO Injector:87   --> scope: eager singleton
+2018-06-13 18:17:16,350  INFO Injector:91 
+2018-06-13 18:17:16,351  INFO Injector:83 org.matsim.core.mobsim.qsim.agents.PopulationAgentSource 
+2018-06-13 18:17:16,351  INFO Injector:84   --> provider: com.google.inject.internal.ConstructorBindingImpl$Factory@3b00856b[Scopes.SINGLETON]
+2018-06-13 18:17:16,351  INFO Injector:85   --> source: org.matsim.core.mobsim.qsim.PopulationPlugin$1.configure(PopulationPlugin.java:26)
+2018-06-13 18:17:16,352  INFO Injector:87   --> scope: eager singleton
+2018-06-13 18:17:16,352  INFO Injector:91 
+2018-06-13 18:17:16,352  INFO Injector:83 org.matsim.core.mobsim.qsim.QSim 
+2018-06-13 18:17:16,352  INFO Injector:84   --> provider: com.google.inject.internal.ConstructorBindingImpl$Factory@22ffa91a[Scopes.SINGLETON]
+2018-06-13 18:17:16,353  INFO Injector:85   --> source: org.matsim.core.mobsim.qsim.QSimProvider$1.configure(QSimProvider.java:64)
+2018-06-13 18:17:16,353  INFO Injector:87   --> scope: eager singleton
+2018-06-13 18:17:16,353  INFO Injector:91 
+2018-06-13 18:17:16,355  INFO MobsimListenerManager:49 calling addQueueSimulationListener
+2018-06-13 18:17:16,355  INFO MobsimListenerManager:53   assigned class org.matsim.core.mobsim.framework.listeners.MobsimListener to interface org.matsim.core.mobsim.qsim.messagequeueengine.MessageQueueEngine
+2018-06-13 18:17:16,355  INFO MobsimListenerManager:53   assigned class org.matsim.core.mobsim.framework.listeners.MobsimListener to interface org.matsim.core.mobsim.framework.listeners.MobsimBeforeSimStepListener
+2018-06-13 18:17:16,355  INFO MobsimListenerManager:53   assigned class org.matsim.core.mobsim.framework.listeners.MobsimListener to interface org.matsim.core.mobsim.framework.listeners.MobsimListener
+2018-06-13 18:17:16,373  INFO QNetsimEngine:507 Assigned 5 nodes and 4 links to QSimEngineRunner #0
+2018-06-13 18:17:16,378  INFO EventsManagerImpl:134  event # 1
+2018-06-13 18:17:16,379  INFO EventsManagerImpl:134  event # 2
+2018-06-13 18:17:16,382  INFO QNetsimEngine:350 SIMULATION (QNetsimEngine) AT 08:20:00 : #links=0 #nodes=0
+2018-06-13 18:17:16,383  INFO EventsManagerImpl:134  event # 4
+2018-06-13 18:17:16,383  INFO QSim:501 SIMULATION (NEW QSim) AT 08:20:00 : #Veh=1 lost=0 simT=0.0s realT=0s; (s/r): 0.0
+2018-06-13 18:17:16,384  INFO Gbl:52 used RAM: 17387128B = 16979kB = 16MB  free: 224309640B = 213MB  total: 241696768B = 230MB
+2018-06-13 18:17:16,421  INFO EventsManagerImpl:134  event # 8
+2018-06-13 18:17:16,444  INFO Gbl:185 Thread performance: Thread=class org.matsim.core.events.SimStepParallelEventsManagerImpl$ProcessEventsRunnable0  cpu-time=0.0sec
+2018-06-13 18:17:16,445  INFO AbstractController$6:222 ### ITERATION 0 fires after mobsim event
+2018-06-13 18:17:16,445  INFO ControlerListenerManagerImpl:248 calling notifyAfterMobsim on org.matsim.analysis.LegTimesControlerListener
+2018-06-13 18:17:16,448  INFO LegTimesControlerListener:50 [0] average trip (probably: leg) duration is: 0 seconds = 00:00:00
+2018-06-13 18:17:16,449  INFO ControlerListenerManagerImpl:248 calling notifyAfterMobsim on org.matsim.core.scoring.EventsToActivities$1
+2018-06-13 18:17:16,449  INFO ControlerListenerManagerImpl:251 [it.0] all ControlerAfterMobsimListeners called.
+2018-06-13 18:17:16,449  INFO AbstractController$4:159 ### ITERATION 0 fires scoring event
+2018-06-13 18:17:16,450  INFO ControlerListenerManagerImpl:183 calling notifyScoring on org.matsim.core.scoring.PlansScoringImpl
+2018-06-13 18:17:16,451  INFO NewScoreAssignerImpl:36 it: 0 msaStart: null
+2018-06-13 18:17:16,451  INFO ControlerListenerManagerImpl:194 [it.0] all ControlerScoringListeners called.
+2018-06-13 18:17:16,451  INFO AbstractController$5:167 ### ITERATION 0 fires iteration end event
+2018-06-13 18:17:16,452  INFO ControlerListenerManagerImpl:160 calling notifyIterationEnds on org.matsim.core.controler.corelisteners.EventsHandlingImpl
+2018-06-13 18:17:16,453  INFO EventsManagerImpl:161 removing Event-Handler: org.matsim.core.events.algorithms.EventWriterXML
+2018-06-13 18:17:16,454  INFO EventsManagerImpl:161 removing Event-Handler: org.matsim.core.events.algorithms.EventWriterXML
+2018-06-13 18:17:16,454  INFO ControlerListenerManagerImpl:160 calling notifyIterationEnds on org.matsim.core.scoring.PlansScoringImpl
+2018-06-13 18:17:16,454  INFO ControlerListenerManagerImpl:167 calling notifyIterationEnds on org.matsim.counts.CountsControlerListener
+2018-06-13 18:17:16,454  INFO ControlerListenerManagerImpl:167 calling notifyIterationEnds on org.matsim.analysis.ModeStatsControlerListener
+2018-06-13 18:17:16,454  INFO ModeStatsControlerListener:153 -- mode share of mode car = 0.0
+2018-06-13 18:17:16,455  INFO ModeStatsControlerListener:153 -- mode share of mode pt = 0.0
+2018-06-13 18:17:16,455  INFO ModeStatsControlerListener:153 -- mode share of mode walk = 0.0
+2018-06-13 18:17:16,455  INFO ModeStatsControlerListener:153 -- mode share of mode bike = 0.0
+2018-06-13 18:17:16,455  INFO ModeStatsControlerListener:153 -- mode share of mode ride = 0.0
+2018-06-13 18:17:16,455  INFO ModeStatsControlerListener:153 -- mode share of mode other = 0.0
+2018-06-13 18:17:16,456  INFO ControlerListenerManagerImpl:167 calling notifyIterationEnds on org.matsim.analysis.ScoreStatsControlerListener
+2018-06-13 18:17:16,456  INFO ScoreStatsControlerListener:191 -- avg. score of the executed plan of each agent: NaN
+2018-06-13 18:17:16,456  INFO ScoreStatsControlerListener:192 -- avg. score of the worst plan of each agent: NaN
+2018-06-13 18:17:16,456  INFO ScoreStatsControlerListener:193 -- avg. of the avg. plan score per agent: NaN
+2018-06-13 18:17:16,456  INFO ScoreStatsControlerListener:194 -- avg. score of the best plan of each agent: NaN
+2018-06-13 18:17:16,457  INFO ControlerListenerManagerImpl:167 calling notifyIterationEnds on org.matsim.analysis.TravelDistanceStatsControlerListener
+2018-06-13 18:17:16,457  INFO TravelDistanceStats:128 [TravelDistanceStats] using 2 thread(s).
+2018-06-13 18:17:16,458  INFO TravelDistanceStats:141 [TravelDistanceStats] all threads finished.
+2018-06-13 18:17:16,458  INFO TravelDistanceStats:161 -- average of the average leg distance per plan (executed plans only): NaN
+2018-06-13 18:17:16,458  INFO TravelDistanceStats:162 (TravelDistanceStats takes an average over all legs where the simulation reports travelled distances. These are car legs, pt legs,
+2018-06-13 18:17:16,458  INFO TravelDistanceStats:163 (and teleported legs whose route contains a distance.)
+2018-06-13 18:17:16,459  INFO ControlerListenerManagerImpl:167 calling notifyIterationEnds on org.matsim.analysis.LegHistogramListener
+2018-06-13 18:17:16,468  INFO LegHistogramListener:72 number of legs:	0	100%
+2018-06-13 18:17:17,382  INFO ControlerListenerManagerImpl:167 calling notifyIterationEnds on org.matsim.analysis.LinkStatsControlerListener
+2018-06-13 18:17:17,383  INFO ControlerListenerManagerImpl:171 [it.0] all ControlerIterationEndsListeners called.
+2018-06-13 18:17:17,743  INFO AbstractController:177 ### ITERATION 0 ENDS
+2018-06-13 18:17:17,743  INFO AbstractController:178 ###################################################
+2018-06-13 18:17:17,743  INFO MatsimRuntimeModifications:58 S H U T D O W N   ---   start shutdown.
+2018-06-13 18:17:17,744  INFO ControlerListenerManagerImpl:121 calling notifyShutdown on org.matsim.core.controler.corelisteners.EventsHandlingImpl
+2018-06-13 18:17:17,744  INFO ControlerListenerManagerImpl:121 calling notifyShutdown on org.matsim.core.controler.corelisteners.DumpDataAtEndImpl
+2018-06-13 18:17:17,748  INFO PopulationWriter:139 Population written to: test/output/ch/sbb/matsim/mobsim/qsim/pt/SBBTransitQSimEngineIntegrationTest/testIntegration/output_plans.xml.gz
+2018-06-13 18:17:17,750  INFO Counter:67 [PopulationWriter] dumped person # 0
+2018-06-13 18:17:17,757  INFO NetworkWriter:68 Writing network to file: test/output/ch/sbb/matsim/mobsim/qsim/pt/SBBTransitQSimEngineIntegrationTest/testIntegration/output_network.xml.gz...
+2018-06-13 18:17:17,763  INFO NetworkWriter:71 done.
+2018-06-13 18:17:17,764  INFO Config:563 setting context to [file:/C:/devsbb/ethz/matsim-sbb-extensions/]
+2018-06-13 18:17:17,794  INFO VehicleWriterV1:55 Vehicles written to: test/output/ch/sbb/matsim/mobsim/qsim/pt/SBBTransitQSimEngineIntegrationTest/testIntegration/output_transitVehicles.xml.gz
+2018-06-13 18:17:17,799  INFO VehicleWriterV1:55 Vehicles written to: test/output/ch/sbb/matsim/mobsim/qsim/pt/SBBTransitQSimEngineIntegrationTest/testIntegration/output_vehicles.xml.gz
+2018-06-13 18:17:17,803  INFO Counter:67 [HouseholdsWriter] dumped household # 0
+2018-06-13 18:17:17,806  INFO LanesWriter:65 Using LaneDefinitionWriter20...
+2018-06-13 18:17:17,806  INFO LanesWriter:74 writing to file: test/output/ch/sbb/matsim/mobsim/qsim/pt/SBBTransitQSimEngineIntegrationTest/testIntegration/output_lanes.xml.gz
+2018-06-13 18:17:17,982  INFO ControlerListenerManagerImpl:126 calling notifyShutdown on org.matsim.analysis.ModeStatsControlerListener
+2018-06-13 18:17:17,983  INFO ControlerListenerManagerImpl:126 calling notifyShutdown on org.matsim.analysis.ScoreStatsControlerListener
+2018-06-13 18:17:17,984  INFO ControlerListenerManagerImpl:126 calling notifyShutdown on org.matsim.analysis.TravelDistanceStatsControlerListener
+2018-06-13 18:17:17,987  INFO ControlerListenerManagerImpl:129 all ControlerShutdownListeners called.
+2018-06-13 18:17:17,987  INFO MatsimRuntimeModifications:81 S H U T D O W N   ---   shutdown completed.
+2018-06-13 18:17:17,988  INFO OutputDirectoryLogging:169 closing the logfile, i.e. messages sent to the logger after this message are not written to the logfile.

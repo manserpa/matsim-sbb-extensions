@@ -6,7 +6,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>ch.sbb</groupId>
 	<artifactId>matsim-sbb-extension</artifactId>
-	<version>0.10.0-nov17-SNAPSHOT</version>
+	<version>0.10.0-nov17-PM</version>
 	<name>MATSim-Extensions by SBB</name>
 	<description></description>
 
@@ -22,19 +22,8 @@
 		<dependency>
 			<groupId>org.matsim</groupId>
 			<artifactId>matsim</artifactId>
-			<version>0.10.0-nov17</version>
+			<version>0.10.0-astra-SNAPSHOT</version>
 		</dependency>
-
-		<dependency>
-			<groupId>org.matsim</groupId>
-			<artifactId>matsim</artifactId>
-			<version>0.10.0-nov17</version>
-			<classifier>tests</classifier>
-			<scope>test</scope>
-			<type>test-jar</type>
-		</dependency>
-
-		<!-- Include the JUnit testing library -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -45,15 +34,7 @@
 	</dependencies>
 
 	<build>
-		<extensions>
-			<extension>
-				<groupId>io.packagecloud.maven.wagon</groupId>
-				<artifactId>maven-packagecloud-wagon</artifactId>
-				<version>0.0.6</version>
-			</extension>
-		</extensions>
 		<plugins>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -82,7 +63,28 @@
 					<downloadJavadocs>true</downloadJavadocs>
 				</configuration>
 			</plugin>
-
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+					<archive>
+						<manifest>
+							<mainClass>org.matsim.gui.MATSimGUI</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-assembly</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 

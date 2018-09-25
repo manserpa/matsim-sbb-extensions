@@ -16,17 +16,12 @@ import org.matsim.pt.transitSchedule.api.TransitRouteStop;
 import org.matsim.pt.transitSchedule.api.TransitSchedule;
 import org.matsim.pt.transitSchedule.api.TransitStopFacility;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author mrieser / SBB
  */
-class SwissRailRaptorData {
+public class SwissRailRaptorData {
 
     private static final Logger log = Logger.getLogger(SwissRailRaptorData.class);
 
@@ -63,6 +58,29 @@ class SwissRailRaptorData {
 
         int countStopFacilities = schedule.getFacilities().size();
 
+        int countRoutes = 0;
+        long countRouteStops = 0;
+        long countDepartures = 0;
+        Set<TransitStopFacility> stops = new HashSet<>();
+
+        for (TransitLine line : schedule.getTransitLines().values()) {
+            countRoutes += line.getRoutes().size();
+            for (TransitRoute route : line.getRoutes().values()) {
+                countRouteStops += route.getStops().size();
+                countDepartures += route.getDepartures().size();
+                for(TransitRouteStop stop : route.getStops()) {
+                    stops.add(stop.getStopFacility());
+                }
+            }
+        }
+
+        if (countRouteStops > Integer.MAX_VALUE) {
+            throw new RuntimeException("TransitSchedule has too many TransitRouteStops: " + countRouteStops);
+        }
+        if (countDepartures > Integer.MAX_VALUE) {
+            throw new RuntimeException("TransitSchedule has too many Departures: " + countDepartures);
+        }
+
         double minX = Double.POSITIVE_INFINITY;
         double minY = Double.POSITIVE_INFINITY;
         double maxX = Double.NEGATIVE_INFINITY;
@@ -78,28 +96,11 @@ class SwissRailRaptorData {
         }
         QuadTree<TransitStopFacility> stopsQT = new QuadTree<>(minX, minY, maxX, maxY);
         for (TransitStopFacility stopFacility : schedule.getFacilities().values()) {
+            if(!stops.contains(stopFacility))
+                continue;
             double x = stopFacility.getCoord().getX();
             double y = stopFacility.getCoord().getY();
             stopsQT.put(x, y, stopFacility);
-        }
-
-        int countRoutes = 0;
-        long countRouteStops = 0;
-        long countDepartures = 0;
-
-        for (TransitLine line : schedule.getTransitLines().values()) {
-            countRoutes += line.getRoutes().size();
-            for (TransitRoute route : line.getRoutes().values()) {
-                countRouteStops += route.getStops().size();
-                countDepartures += route.getDepartures().size();
-            }
-        }
-
-        if (countRouteStops > Integer.MAX_VALUE) {
-            throw new RuntimeException("TransitSchedule has too many TransitRouteStops: " + countRouteStops);
-        }
-        if (countDepartures > Integer.MAX_VALUE) {
-            throw new RuntimeException("TransitSchedule has too many Departures: " + countDepartures);
         }
 
         double[] departures = new double[(int) countDepartures];
