@@ -278,10 +278,7 @@ public class SBBTransitQSimEngine extends TransitQSimEngine /*implements Departu
         if (this.createLinkEvents) {
             Id<Link> linkId = driver.getCurrentLinkId();
             String mode = driver.getMode();
-            if(driver.getVehicle().getId().toString().contains("para_"))
-                this.qSim.getEventsManager().processEvent(new VehicleEntersTrafficEvent(now, driver.getId(), linkId, driver.getVehicle().getId(), mode, 0.5));
-            else
-                this.qSim.getEventsManager().processEvent(new VehicleEntersTrafficEvent(now, driver.getId(), linkId, driver.getVehicle().getId(), mode, 1.0));
+            this.qSim.getEventsManager().processEvent(new VehicleEntersTrafficEvent(now, driver.getId(), linkId, driver.getVehicle().getId(), mode, 1.0));
         }
         TransitEvent event = new TransitEvent(now, TransitEventType.ArrivalAtStop, context);
         this.eventQueue.add(event);
@@ -341,10 +338,7 @@ public class SBBTransitQSimEngine extends TransitQSimEngine /*implements Departu
             if (this.createLinkEvents) {
                 Id<Link> linkId = driver.getDestinationLinkId();
                 String mode = driver.getMode();
-                if(driver.getVehicle().getId().toString().contains("para_"))
-                    this.qSim.getEventsManager().processEvent(new VehicleLeavesTrafficEvent(event.time, driver.getId(), linkId, driver.getVehicle().getId(), mode, 0.5));
-                else
-                    this.qSim.getEventsManager().processEvent(new VehicleLeavesTrafficEvent(event.time, driver.getId(), linkId, driver.getVehicle().getId(), mode, 1.0));
+                this.qSim.getEventsManager().processEvent(new VehicleLeavesTrafficEvent(event.time, driver.getId(), linkId, driver.getVehicle().getId(), mode, 1.0));
             }
             this.qSim.getEventsManager().processEvent(new PersonLeavesVehicleEvent(event.time, driver.getId(), driver.getVehicle().getId()));
             driver.endLegAndComputeNextState(event.time);
